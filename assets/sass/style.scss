@@ -68,9 +68,9 @@ header {
 
   width: 100%;
   height: 100%;
-  
+
   color: $base-color-fg;
-  
+
   a, a:visited, a:active {
     text-shadow: $base-color-black 1px 0 2px;
     font-weight: bold;
@@ -89,7 +89,7 @@ header {
   }
 
   .logo-and-nav {
-    display: flex;    
+    display: flex;
     align-items: center;
     width: 100%;
     column-gap: 20px;
@@ -113,23 +113,23 @@ header {
       width: 150px;
     }
   }
-  
+
   @media only screen and (max-width: 800px) {
     .logo img {
       margin-right: -20px; // This is empty space in the image
     }
-  
+
   }
 
-  
-  
+
+
   .hero {
-  
+
     margin: 40px 0;
     padding: 40px;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.9);
     border-radius: 5px;
-  
+
     @media only screen and (max-width: 1200px) {
         margin: 0 0;
     }
@@ -146,7 +146,7 @@ header {
       font-size: 2em;
       margin-bottom: 40px;
     }
-    
+
   }
 
 }
@@ -174,7 +174,7 @@ section.map {
   article {
     color: #fff;
   }
-  
+
   #map {
     max-width: 1400px;
     margin: 0 auto;
@@ -191,7 +191,7 @@ article {
 
   margin: 40px 0;
   font-size: 1.5em;
-  
+
   h2 {
     font-size: 2em;
     margin: 20px 0;
@@ -202,7 +202,7 @@ article {
     line-height: 150%;
     margin: 20px 0;
   }
-  
+
   ul {
     margin: 20px 0;
     padding-left: 40px;
@@ -214,7 +214,7 @@ article {
     margin-right: 10px;
     margin-bottom: -20px;
   }
-  
+
   a, a:active, a:visited {
     color: darken($theme-color-secondary, 20%);
   }
@@ -237,12 +237,12 @@ footer {
   a {
     color: $base-color-fg;
   }
-  
+
   p {
     margin-bottom: 20px;
     line-height: 150%;
   }
-  
+
   p.minor {
     font-size: 0.8em;
     color: #ccc;
@@ -257,15 +257,15 @@ footer {
     column-gap: 50px;
     align-items: center;
     align-content: space-between;
-    
+
     .footer-column {
       width: 33%;
     }
-    
+
     .opening-hours {
       text-align: right;
     }
-    
+
     .logo {
       img {
         display: block;
@@ -291,7 +291,7 @@ footer {
      }
     }
 
-   
+
 }
 
 }
