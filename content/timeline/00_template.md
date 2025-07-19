@@ -14,4 +14,4 @@ params:
 ---
 
 <!--Description paragraph, markdown possible-->
-
+<!--NB! Use present tense! "Django gets a ...", not "Django got a ..."-->

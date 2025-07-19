@@ -45,6 +45,9 @@ languages:
       - name: "Add event"
         url: "/add-event/"
         weight: 2
+      - name: "Timeline"
+        url: "/timeline/"
+        weight: 3
       # - name: "Gifts"
       #   url: "/gifts/"
       #   weight: 3

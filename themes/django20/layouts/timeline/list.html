@@ -11,8 +11,9 @@
       <ul>
       {{ $timeline := (where .Pages.ByDate "published" "!=" "false") }}
       {{ range sort $timeline ".Params.timeline_date" "asc" }}
-          <li>
+          <li class="{{ .Params.timeline_type }}">
             <time>{{ .Params.timeline_date }}</time>
+            {{ if .Params.timeline_release }}<p class="release">📦 {{ .Params.timeline_release }} released (<a href="https://docs.djangoproject.com/en/5.2/releases/2.0/" target="_blank">docs</a>)</p>{{ end }}
   			    {{ .Content }}
 			    </li>
 	    {{ end }}

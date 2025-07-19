@@ -9,4 +9,4 @@ params:
 
 ---
 
-Just before lunch on July 13, 2005, Jacob Kaplan-Moss made [the first commit](https://github.com/django/django/commit/d6ded0e91bcdd2a8f7a221f6a5552a33fe545359) to the public repository that would become Django. This was followed by a series of commits by Adrian Holovaty importing from the private repository where Django had lived up to that point.
+Just before lunch on July 13, 2005, Jacob Kaplan-Moss makes [the first commit](https://github.com/django/django/commit/d6ded0e91bcdd2a8f7a221f6a5552a33fe545359) to the public repository that would become Django. This is followed by a series of commits by Adrian Holovaty importing from the private repository where Django had lived up to that point.

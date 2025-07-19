@@ -5,7 +5,8 @@ draft: false
 
 params:
   timeline_date: 2010-05-17
-  timeline_type: milestone
+  timeline_type: release
+  timeline_release: "1.0.1"
 
 ---
 
