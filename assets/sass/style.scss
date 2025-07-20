@@ -1,6 +1,6 @@
 // dark themed
 $base-color-fg: #fff;
-$base-color-bg: #222;
+$base-color-bg: #2c2c2c;
 $base-color-black: #000;
 
 $theme-color-primary: #00f8a5;
@@ -29,47 +29,49 @@ html {
 
 /* BODY */
 body {
-
+  margin-top: 50px;
   min-height: 100vh;
   position: relative;
   padding: 0px;
   font-family: "Roboto", sans-serif;
-  background-image: url("{{ "images/django-cake.png" | relURL }}");
+  background-image: url('{{ "images/django-cake.png" | relURL }}');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: top;
   background-attachment: fixed;
   background-color: $base-color-bg;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+              url('{{ "images/django-cake.png" | relURL }}');
 }
-
 
 /* CONTENT FOR ALL PAGES */
 .container {
-    margin: 0 auto;
-    @media only screen and (min-width: 800px) {
-        min-width: 800px;
-        max-width: 1200px;
-    }
+  margin: 0 auto;
+  @media only screen and (min-width: 992px) {
+      min-width: 800px;
+      max-width: 1200px;
+  }
 
-    @media only screen and (max-width: 800px) {
-        width: auto;
-    }
+  @media only screen and (max-width: 992px) {
+      width: auto;
+  }
 
-    article {
-      padding: 0 20px;
-      img {
-          display: block;
-          width: 100%;
-      }
+  article {
+    padding: 0 20px;
+
+    img {
+      display: block;
+      width: 100%;
     }
+  }
 }
 
 header {
-
-  width: 100%;
+  width: 75%;
   height: 100%;
-
   color: $base-color-fg;
+  margin: 0 auto;
+  position: relative;
 
   a, a:visited, a:active {
     text-shadow: $base-color-black 1px 0 2px;
@@ -80,22 +82,25 @@ header {
   }
 
   .nav-container {
-    background-color: $theme-color-primary;
-    margin-top: 70px;
-    border-width: 5px 0 5px 0;
-    border-color: #000;
+    background-color: $base-color-black;
+    margin-top: 30px;
+    border-width: 0 0 5px 0;
+    border-color: $theme-color-primary;
     border-style: solid;
     padding: 20px;
-  }
+  } 
 
   .logo-and-nav {
     display: flex;
     align-items: center;
     width: 100%;
     column-gap: 20px;
-    font-size: 1.8em;
+    font-size: 1.2em;
+
     .logo {
-      margin: -70px 0;
+      position: absolute;
+      left: -35px;
+      margin: 20px 0 0 0;
     }
   }
 
@@ -105,6 +110,7 @@ header {
     width: 100%;
     column-gap: 25px;
     align-items: center;
+    justify-content: flex-end;
   }
 
   .logo {
@@ -114,43 +120,129 @@ header {
     }
   }
 
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 992px) {
     .logo img {
       margin-right: -20px; // This is empty space in the image
     }
-
   }
-
-
-
-  .hero {
-
-    margin: 40px 0;
-    padding: 40px;
-    background: rgba(0, 0, 0, 0.9);
-    border-radius: 5px;
-
-    @media only screen and (max-width: 1200px) {
-        margin: 0 0;
-    }
-
-    h1 {
-      font-size: 4em;
-      margin: 20px 0;
-    }
-    p.subtitle {
-      font-size: 3em;
-      margin-bottom: 40px;
-    }
-    p.subsubtitle {
-      font-size: 2em;
-      margin-bottom: 40px;
-    }
-
-  }
-
 }
 
+.happy-birthday {
+  margin: 100px auto;
+  padding: 40px;
+  width: 75%;
+  background-color: rgba(0, 0, 0, 0.5);
+  @media only screen and (min-width: 992px) {
+      margin: 220px auto;
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin: 10px 0;
+    @media only screen and (min-width: 992px) {
+      font-size: 4rem;
+      margin: 20px 0;
+    }
+  }
+}
+
+.wave {
+  width: 75%;
+  margin: 0 auto;
+}
+
+#top-wave {
+  margin: 40px auto;
+}
+
+#bottom-wave {
+  margin: -40px auto;
+}
+
+.subheaders {
+  background-color: $theme-color-primary;
+  margin: 0 auto;
+  width: 75%;
+  position: relative;
+  top: -20px;
+
+  .container {
+    padding-top: 60px;
+  }
+  
+  p {
+    font-size: 1.1rem;
+    font-weight: 700;
+    @media only screen and (min-width: 992px) {
+      font-size: 1.4rem;
+    }
+  }
+
+  .svg-image {
+    width: 70%;
+    margin: 0 auto;
+  }
+}
+
+.main {
+  background-color: $theme-color-primary;
+  width: 75%;
+  margin: 0 auto;
+  position: relative;
+  top: -20px;
+
+  h2 {
+    font-size: 1.4rem;
+    font-weight: bolder;
+    @media only screen and (min-width: 992px) {
+      font-size: 1.8rem;
+    }
+  }
+
+  .svg-image {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  .the-header {
+    padding-top: 0px;
+    padding-bottom: 50px;
+  }
+
+  p {
+    font-size: 1.1rem;
+    @media only screen and (min-width: 992px) {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+
+/* .hero {
+  margin: 40px 0;
+  padding: 40px;
+  background: rgba(0, 0, 0, 0.9);
+  border-radius: 5px;
+  @media only screen and (max-width: 1200px) {
+      margin: 0 0;
+  }
+
+  h1 {
+    font-size: 4em;
+    margin: 20px 0;
+  }
+  p.subtitle {
+    font-size: 3em;
+    margin-bottom: 40px;
+  }
+
+  p.subsubtitle {
+    font-size: 2em;
+    margin-bottom: 40px;
+  }
+} */
+
+/* 
 section {
   background-color: $theme-color-primary;
   border-width: 5px 0 5px 0;
@@ -158,12 +250,24 @@ section {
   border-style: solid;
   margin-bottom: 20px;
 }
-
+ */
 section.events {
+  width: 75%;
+  margin: -50px auto 0;
+  padding: 20px 0 0;
   background-color: $theme-color-secondary;
-  border-width: 5px 0 5px 0;
-  border-color: #000;
-  border-style: solid;
+  
+  .container-events{
+    position: relative;
+    top: -40px;
+  }
+
+  .the-table {
+    width: 90%;
+    @media only screen and (min-width: 800px) {
+      margin: 0 auto;
+    }
+  }
 }
 
 section.map {
@@ -171,6 +275,7 @@ section.map {
   border-width: 5px 0 5px 0;
   border-color: #000;
   border-style: solid;
+
   article {
     color: #fff;
   }
@@ -266,10 +371,12 @@ section.timeline {
 	  transform: translateY(-50%);
 	  white-space: nowrap;
   }
+
   li:nth-child(even) time {
 	  left: auto;
 	  right: calc(100% + 50px);
   }
+
   time:before {
 	  content: "";
 	  position: absolute;
@@ -286,12 +393,9 @@ section.timeline {
 	  background: repeating-linear-gradient(90deg, #fff 0 5px, #0000 0 10px) 50%/100%
 		  2px no-repeat;
   }
-
 }
 
-
 article {
-
   margin: 40px 0;
   font-size: 1.5em;
 
@@ -321,15 +425,12 @@ article {
   a, a:active, a:visited {
     color: darken($theme-color-secondary, 20%);
   }
-
 }
 
 footer {
-
-  margin-top: 500px;
+  margin-top: 300px;
   color: $base-color-fg;
   background: rgba(0, 0, 0, 0.8);
-
   font-size: 1.4em;
 
   h5 {
@@ -452,4 +553,3 @@ footer {
 	height: 70vh;
 	min-height: 350px;
 }
-
