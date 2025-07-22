@@ -1,0 +1,12 @@
+<div class="container landing_page-section">
+    <div class="row d-flex justify-content-center landing_page">
+        <div class="col-lg-6 align-self-center">
+            {{ if .Title }}
+                {{ with .Title }}<h1 class="text-uppercase text-white text-center fw-bold the-title">{{ . | safeHTML }}</h1>{{ end }}
+            {{ end }}
+        </div>
+        <div class="col-lg-6 align-self-start unicorn">
+            <img src="{{ "images/django-cake.png" | relURL }}" alt="The birthday cake">
+        </div>
+    </div>
+</div>
