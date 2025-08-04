@@ -7,7 +7,7 @@ $theme-color-primary: #00f8a5;
 $theme-color-secondary: #44b0ff;
 $theme-color-tertiary: #fe7abf;
 
-@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Orbitron:wght@400..900&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Monoton&family=Orbitron:wght@400..900&display=swap');
 
 html,
 body,
@@ -42,8 +42,8 @@ body {
   background-position: top;
   background-attachment: fixed;
   background-color: $base-color-bg;
-  background-position: center 6rem;
 }
+
 
 /* CONTENT FOR ALL PAGES */
 .container {
@@ -74,26 +74,26 @@ header {
   a, a:visited, a:active {
     // text-shadow: $base-color-black 1px 0 2px;
     font-weight: bold;
-    color: $base-color-fg;
+    color: #000;
     text-decoration: none;
     white-space: nowrap;
-    font-family: "Orbitron", sans-serif;
-    font-weight: 600;
-    font-style: normal;
   }
 
   a:hover, a:focus {
-    color: $theme-color-primary;
+    color: $base-color-fg;
   }
 
   .nav-container {
+    background-color: $theme-color-primary;
     margin-top: 50px;
+    border-width: 5px 0;
+    border-color: $base-color-black;
+    border-style: solid;
     padding: 10px;
 
     @media only screen and (min-width: 800px) {
-      // margin-top: 100px;
+      margin-top: 100px;
       padding: 20px;
-      max-width: 100%;
     }    
   }
 
@@ -106,8 +106,7 @@ header {
 
     @media only screen and (min-width: 800px) {
       column-gap: 20px;
-      font-size: 1.5em;
-      max-width: 100%;
+      font-size: 1.8em;
     }  
     
     .logo {
@@ -143,8 +142,7 @@ header {
 
   .icons {
     position: absolute;
-    right: 2rem;
-    top: 0;
+    right: 5%;
     font-size: 2.8rem;
     display: inline-flex;
     align-items: center;
@@ -155,7 +153,7 @@ header {
     svg {
       width: 0.6em;
       height: 0.6em;
-      color: $base-color-fg;
+      color: $base-color-black;
     }
   }
 }
@@ -192,21 +190,21 @@ header {
 
   header .main-nav {
     position: absolute;
-    top: 40px;
+    top: 50px;
     left: 0;
     width: 100%;
     flex-direction: column;
     column-gap: 0;
     height: 0;
     z-index: 1000;
-    background-color: $base-color-bg;
+    background-color: $theme-color-primary;
     overflow: hidden;
     box-shadow: 0 0.5rem rgba(0, 0, 0, 0.5);
   }
 
   #check:checked~.main-nav {
     height: 6rem; // Adjust height based on number of links
-    padding-top: 1.2rem;
+    padding: 0.5rem 0;
   }
 
   @for $i from 0 through 5 {
@@ -233,21 +231,13 @@ header {
 
 .hero {
   color: $base-color-fg;
-  margin: 3rem 2.2rem;
+  margin: 40px 0;
   padding: 40px;
   background: rgba(0, 0, 0, 0.9);
   border-radius: 5px;
 
   @media only screen and (max-width: 1200px) {
-      margin: 3rem 2.2rem;
-  }
-
-  @media only screen and (max-width: 800px) {
-      margin: 2.2rem 2rem;
-  }
-
-  @media only screen and (max-width: 400px) {
-      margin: 2.5rem 1.5rem;
+      margin: 0 0;
   }
 
   h1 {
