@@ -7,6 +7,8 @@ $theme-color-primary: #00f8a5;
 $theme-color-secondary: #44b0ff;
 $theme-color-tertiary: #fe7abf;
 
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Orbitron:wght@400..900&display=swap');
+
 html,
 body,
 div,
@@ -40,8 +42,8 @@ body {
   background-position: top;
   background-attachment: fixed;
   background-color: $base-color-bg;
+  background-position: center 6rem;
 }
-
 
 /* CONTENT FOR ALL PAGES */
 .container {
@@ -72,27 +74,26 @@ header {
   a, a:visited, a:active {
     // text-shadow: $base-color-black 1px 0 2px;
     font-weight: bold;
-    color: #000;
+    color: $base-color-fg;
     text-decoration: none;
     white-space: nowrap;
+    font-family: "Orbitron", sans-serif;
+    font-weight: 600;
+    font-style: normal;
   }
 
   a:hover, a:focus {
-    color: $base-color-fg;
-    text-decoration: underline;
+    color: $theme-color-primary;
   }
 
   .nav-container {
-    background-color: $theme-color-primary;
     margin-top: 50px;
-    border-width: 5px 0 5px 0;
-    border-color: #000;
-    border-style: solid;
     padding: 10px;
 
     @media only screen and (min-width: 800px) {
-      margin-top: 100px;
+      // margin-top: 100px;
       padding: 20px;
+      max-width: 100%;
     }    
   }
 
@@ -105,7 +106,8 @@ header {
 
     @media only screen and (min-width: 800px) {
       column-gap: 20px;
-      font-size: 1.8em;
+      font-size: 1.5em;
+      max-width: 100%;
     }  
     
     .logo {
@@ -116,6 +118,7 @@ header {
   .main-nav {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
     width: 100%;
     column-gap: 25px;
     align-items: center;
@@ -133,17 +136,118 @@ header {
       }
     }
   }
+
+  #check {
+    display: none;
+  }
+
+  .icons {
+    position: absolute;
+    right: 2rem;
+    top: 0;
+    font-size: 2.8rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    display: none;
+
+    svg {
+      width: 0.6em;
+      height: 0.6em;
+      color: $base-color-fg;
+    }
+  }
+}
+
+/* BREAKPOINTS FOR NAVIGATION */
+@media only screen and (max-width: 400px) { // Adjust breakpoint based on number of links
+  #check:checked~.icons #menu-icon {
+    display: none;
+  }
+
+  label.icons {
+    display: inline-flex;
+    align-items: center;
+
+    #close-icon {
+      display: none;
+    }
+  }
+
+  #check:checked~.icons #close-icon {
+    display: block;
+    margin-top: 0.3rem;
+    margin-left: 0.2rem;
+    
+  }
+
+  .logo-and-nav {
+    height: 20px;
+
+    .logo {
+      z-index: 10001;
+    }
+  }
+
+  header .main-nav {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    column-gap: 0;
+    height: 0;
+    z-index: 1000;
+    background-color: $base-color-bg;
+    overflow: hidden;
+    box-shadow: 0 0.5rem rgba(0, 0, 0, 0.5);
+  }
+
+  #check:checked~.main-nav {
+    height: 6rem; // Adjust height based on number of links
+    padding-top: 1.2rem;
+  }
+
+  @for $i from 0 through 5 {
+    .delay-#{$i} {
+      --i: #{$i};
+    }
+  }
+
+  .main-nav a {
+      display: block;
+      margin: 0.5rem 0;
+      text-align: center; 
+      transform: translateY(-50px);
+      transition: 0.4s ease;
+      opacity: 0;
+  }
+
+  #check:checked~.main-nav a {
+    transform: translateY(0);
+    opacity: 1;
+    transition-delay: calc(0.15s * var(--i));
+  }
 }
 
 .hero {
   color: $base-color-fg;
-  margin: 40px 0;
+  margin: 3rem 2.2rem;
   padding: 40px;
   background: rgba(0, 0, 0, 0.9);
   border-radius: 5px;
 
   @media only screen and (max-width: 1200px) {
-      margin: 0 0;
+      margin: 3rem 2.2rem;
+  }
+
+  @media only screen and (max-width: 800px) {
+      margin: 2.2rem 2rem;
+  }
+
+  @media only screen and (max-width: 400px) {
+      margin: 2.5rem 1.5rem;
   }
 
   h1 {

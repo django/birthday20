@@ -1,11 +1,24 @@
 <div class="nav-container">
     <div class="logo-and-nav container">
         <a href="/" class="logo" title="Back to start"><img src='{{ "images/balloon-logo.png" | relURL }}'></a>
+        <input type="checkbox" id="check">
+        <label class="icons" aria-label="Toggle navigation" for="check">
+            <svg id="menu-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <rect y="4" width="24" height="3" fill="currentColor" />
+                <rect y="11" width="24" height="3" fill="currentColor" />
+                <rect y="18" width="24" height="3" fill="currentColor" />
+            </svg>
+            <svg id="close-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <line x1="4" y1="4" x2="16" y2="16" stroke="currentColor" stroke-width="2" />
+                <line x1="16" y1="4" x2="4" y2="16" stroke="currentColor" stroke-width="2" />
+            </svg>
+        </label>
+
         <nav class="main-nav">
-            {{ with .Site.Menus.main }}
-                {{ range . }}
-                    <a href="{{ .URL | relURL }}" title="{{ .Name }}">{{ .Name }}</a>
-                {{ end }}
+            {{ range $index, $item := .Site.Menus.main }}
+                <a class="delay-{{ $index }}" href="{{ $item.URL | relURL }}" title="{{ $item.Name }}">
+                {{ $item.Name }}
+                </a>
             {{ end }}
         </nav>
     </div>
