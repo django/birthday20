@@ -23,7 +23,60 @@
   <div class="container container-events {{ .Params.cssClassSuffix }}">
     <article class="{{ .Params.cssClassSuffix }}">
 
-      <table id="events" class="event-table">
+      {{ $today := now.Format "2006-01-02" }}
+
+      <!-- Upcoming Events -->
+      <h2>Upcoming Events</h2>
+      <table class="event-table">
+        <thead>
+          <tr>
+            <th class="date">When</th>
+            <th>What</th>
+            <th>Host</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{ range sort (where $events ".Params.event_date" "ge" $today) ".Params.event_date" "asc" }}
+          <tr>
+            <td>
+              {{ time.Format "2006-01-02" .Params.event_date }}
+              {{ if (and .Params.event_date_end (not (eq .Params.event_date_end .Params.event_date))) }}
+                » {{ .Params.event_date_end }}
+              {{ end }}
+            </td>
+            <td><a href="{{ .Params.event_url | default .Permalink }}" target="_blank">{{ .Title | truncate 50 }}</a></td>
+            <td>{{ .Params.event_host }}</td>
+          </tr>
+          {{ end }}
+        </tbody>
+      </table>
+
+      <h2>Past Events</h2>
+      <table class="event-table">
+        <thead>
+          <tr>
+            <th class="date">When</th>
+            <th>What</th>
+            <th>Host</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{ range sort (where $events ".Params.event_date" "lt" $today) ".Params.event_date" "desc" }}
+          <tr>
+            <td>
+              {{ time.Format "2006-01-02" .Params.event_date }}
+              {{ if (and .Params.event_date_end (not (eq .Params.event_date_end .Params.event_date))) }}
+                » {{ .Params.event_date_end }}
+              {{ end }}
+            </td>
+            <td><a href="{{ .Params.event_url | default .Permalink }}" target="_blank">{{ .Title | truncate 50 }}</a></td>
+            <td>{{ .Params.event_host }}</td>
+          </tr>
+          {{ end }}
+        </tbody>
+      </table>
+
+      <!-- <table id="events" class="event-table">
         <thead>
           <tr>
             <th class="date">When</th>
@@ -42,7 +95,7 @@
           </tr>
           {{ end }}
         </tbody>
-      </table>
+      </table> -->
 
     </article>
   </div>
