@@ -15,6 +15,8 @@ params:
   event_url: "https://djangomed.eu"
   latitude: 41.9098137
   longitude: 3.0864006
+  city: "Palafrugell"
+  country: "Spain"
   venue_address: "Palafrugell, Girona, Spain"
 ---
 

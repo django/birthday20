@@ -427,7 +427,7 @@ footer {
     display: flex;
     flex-wrap: wrap;
     flex-flow: row;
-    width: 100%;
+    //width: 100%;
     column-gap: 50px;
     align-items: center;
     align-content: space-between;
@@ -474,7 +474,171 @@ footer {
   }
 }
 
-.event-table {
+section.events {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: $theme-color-secondary;
+  padding-bottom: 3rem;
+
+  .table {
+    width: 80vw;
+    height: 100%;
+    background-color: #fff5;
+    backdrop-filter: blur(7px);
+    box-shadow: 0 0.4rem 0.8rem #0005;
+    border-radius: 0.8rem;
+    margin-top: 2rem;
+    overflow: hidden;
+
+    @media screen and (max-width: 1200px) {
+      width: 90vw;
+    }
+
+    &__header {
+      background-color: #fff4;
+      backdrop-filter: blur(7px);
+      border: none;
+      width: 100%;
+      height: 15%;
+      padding: 0.8rem 1rem;
+    }
+
+    &__body {
+      width: 95%;
+      max-height: calc(90% - 0.8rem);
+      background-color: #fffb;
+      margin: 0.8rem auto;
+      border-radius: 0.6rem;
+      border: none;
+      overflow: auto;
+
+      &::-webkit-scrollbar {
+        width: 0.5rem;
+        height: 0.5rem;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        border-radius: 0.5rem;
+        background-color: #0004;
+        visibility: hidden;
+      }
+
+      &:hover::-webkit-scrollbar-thumb {
+        visibility: visible;
+      }
+
+      table, th, td {
+        border-collapse: collapse;
+        padding: .5rem;
+        text-align: left;
+
+        @media screen and (min-width: 800px) {
+          padding: 1rem;
+        }
+      }
+
+      table {
+        width: 100%;
+      }
+
+      thead {
+        border-bottom: solid 2px #0004;
+
+        th {
+          position: sticky;
+          top: 0;
+          left: 0;
+          background-color: #cbecfffe;
+        }
+      }
+
+      tbody tr {
+        &:nth-child(even) {
+          background-color: #0000000b;
+        }
+
+        &:hover {
+          background-color: #fff6;
+        }
+      }
+
+      .event-link {
+        
+        svg {
+        width: 18px;
+        height: 18px;
+        margin-bottom: .4rem;
+        vertical-align: middle;
+        color: #005935;
+
+          @media screen and (min-width: 800px) {
+            width: 24px;
+            height: 24px;
+            margin-right: .5rem;
+            vertical-align: middle;
+          }
+        }
+
+        a {
+          text-decoration: none;
+          font-weight: 600;
+          color: #005935;
+        }
+      }
+
+      .event-link:hover {
+        svg, a {
+          color: #00f8a5;
+        }
+      }
+
+      .event-category {
+        padding: 0.4rem;
+        border-radius: 2rem;
+        text-align: center;
+
+        &.conference {
+          background-color: #00f8a5;
+          color: #005935;
+        }
+
+        &.meetup {
+          background-color: #005935;
+          color: #00f8a5;
+        }
+
+        &.sprint {
+          background-color: #b57edc;
+          color: #3b1f54;
+        }
+
+        &.other {
+          background-color: #222222;
+          color: #fafcfb;
+        }
+      }
+
+      .event-host {
+        font-weight: 600;
+        color: #3b1f54;
+      }
+
+      @media screen and (max-width: 1200px) {
+        td:first-of-type {
+          min-width: 12rem;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+/* .event-table {
 
   margin-top: 10px;
 
@@ -507,7 +671,7 @@ footer {
     }
   }
 
-}
+} */
 
 
 // TODO: Properly integrate this CSS into the SASS + theme

@@ -20,84 +20,149 @@
 </section>
 
 <section class="events" id="events">
-  <div class="container container-events {{ .Params.cssClassSuffix }}">
-    <article class="{{ .Params.cssClassSuffix }}">
 
-      {{ $today := now.Format "2006-01-02" }}
-
+    {{ $today := now.Format "2006-01-02" }}
+    <div class="table">
       <!-- Upcoming Events -->
-      <h2>Upcoming Events</h2>
-      <table class="event-table">
-        <thead>
-          <tr>
-            <th class="date">When</th>
-            <th>What</th>
-            <th>Host</th>
-          </tr>
-        </thead>
-        <tbody>
-          {{ range sort (where $events ".Params.event_date" "ge" $today) ".Params.event_date" "asc" }}
-          <tr>
-            <td>
-              {{ time.Format "2006-01-02" .Params.event_date }}
-              {{ if (and .Params.event_date_end (not (eq .Params.event_date_end .Params.event_date))) }}
-                » {{ .Params.event_date_end }}
-              {{ end }}
-            </td>
-            <td><a href="{{ .Params.event_url | default .Permalink }}" target="_blank">{{ .Title | truncate 50 }}</a></td>
-            <td>{{ .Params.event_host }}</td>
-          </tr>
-          {{ end }}
-        </tbody>
-      </table>
+      <section class="table__header">
+        <h2>Upcoming Events</h2>
+      </section>
+      <section class="table__body">
+        <table class="event-table">
+          <thead>
+            <tr class="table-header">
+              <th class="date header-element">Event</th>
+              <th class="header-element">Location</th>
+              <th class="header-element">Date</th>
+              <th class="header-element">Category</th>
+              <th class="header-element">Host</th> 
+            </tr>
+          </thead>
+          <tbody>
+            {{ range sort (where $events ".Params.event_date" "ge" $today) ".Params.event_date" "asc" }}
+            <tr>
+              <!-- Event -->
+              <td class="event-link">
+                <svg xmlns="http://www.w3.org/2000/svg" 
+                    width="24" height="24" viewBox="0 0 24 24" 
+                    fill="none" stroke="currentColor" stroke-width="2" 
+                    stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M10 13a5 5 0 0 1 0-7l1.5-1.5a5 5 0 0 1 7 7L17 13"/>
+                  <path d="M14 11a5 5 0 0 1 0 7l-1.5 1.5a5 5 0 0 1-7-7L7 11"/>
+                </svg>
 
-      <h2>Past Events</h2>
-      <table class="event-table">
-        <thead>
-          <tr>
-            <th class="date">When</th>
-            <th>What</th>
-            <th>Host</th>
-          </tr>
-        </thead>
-        <tbody>
-          {{ range sort (where $events ".Params.event_date" "lt" $today) ".Params.event_date" "desc" }}
-          <tr>
-            <td>
-              {{ time.Format "2006-01-02" .Params.event_date }}
-              {{ if (and .Params.event_date_end (not (eq .Params.event_date_end .Params.event_date))) }}
-                » {{ .Params.event_date_end }}
-              {{ end }}
-            </td>
-            <td><a href="{{ .Params.event_url | default .Permalink }}" target="_blank">{{ .Title | truncate 50 }}</a></td>
-            <td>{{ .Params.event_host }}</td>
-          </tr>
-          {{ end }}
-        </tbody>
-      </table>
+                <a href="{{ .Params.event_url | default .Permalink }}" target="_blank">{{ .Title | truncate 50 }}</a>
+              </td>
+              <!-- Location -->
+              <td class="event-location">
+                {{ $city := .Params.city }}
+                {{ $country := .Params.country }}
 
-      <!-- <table id="events" class="event-table">
-        <thead>
-          <tr>
-            <th class="date">When</th>
-            <th>What</th>
-            <th>Host</th>
-          </tr>
-        </thead>
-        <tbody>
-          {{ range sort $events ".Params.event_date" "asc" }}
-          <tr>
-            <td>{{ time.Format "2006-01-02" .Params.event_date }}{{ if (and .Params.event_date_end (not (eq
-              .Params.event_date_end .Params.event_date))) }}»{{ .Params.event_date_end }}{{ end }}</td>
-            <td><a href="{{ .Params.event_url | default .Permalink }}" target="_blank">{{ .Title | truncate 50 }}</a>
-            </td>
-            <td>{{ .Params.event_host }}</td>
-          </tr>
-          {{ end }}
-        </tbody>
-      </table> -->
+                {{ if and $city (not (findRE "[0-9]" $city)) }}
+                  {{ $city }}{{ if $country }},{{ end }}
+                {{ end }}
+                {{ if $country }}
+                  {{ $country }}
+                {{ end }}
+              </td>
+              <!-- Date -->
+              <td class="event-date">
+                {{ $eventDate := .Params.event_date | time }}
 
-    </article>
+                <span class="event-day">{{ $eventDate.Format "02" }}</span>
+                <span class="event-month">{{ $eventDate.Format "January" }}</span>
+
+                {{ if and .Params.event_date_end (ne .Params.event_date_end .Params.event_date) }}
+                  &nbsp;&raquo;&nbsp;
+                  {{ $eventDateEnd := .Params.event_date_end | time }}
+                  <span class="event-day">{{ $eventDateEnd.Format "02" }}</span>
+                  <span class="event-month">{{ $eventDateEnd.Format "January" }}</span>
+                {{ end }}
+              </td>
+              <!-- Category -->
+              <td>
+                <p class="event-category {{ .Params.event_category }}">
+                  {{ with .Params.event_category }}{{ . }}{{ else }}—{{ end }}
+                </p>
+              </td>
+              <!-- Host -->
+              <td class="event-host">{{ .Params.event_host }}</td>
+            </tr>
+            {{ end }}
+          </tbody>
+        </table>
+      </section>
+    </div>
+    <div class="table">
+      <!-- Past events -->
+      <section class="table__header">
+        <h2>Past Events</h2>
+      </section>
+      <section class="table__body">
+        <table class="event-table">
+          <thead>
+            <tr class="table-header">
+              <th class="date header-element">Event</th>
+              <th class="header-element">Location</th>
+              <th class="header-element">Date</th>
+              <th class="header-element">Category</th>
+              <th class="header-element">Host</th> 
+            </tr>
+          </thead>
+          <tbody>
+            {{ range sort (where $events ".Params.event_date" "lt" $today) ".Params.event_date" "desc" }}
+            <tr>
+              <!-- Event -->
+              <td class="event-link">
+                <svg xmlns="http://www.w3.org/2000/svg" 
+                    width="24" height="24" viewBox="0 0 24 24" 
+                    fill="none" stroke="currentColor" stroke-width="2" 
+                    stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M10 13a5 5 0 0 1 0-7l1.5-1.5a5 5 0 0 1 7 7L17 13"/>
+                  <path d="M14 11a5 5 0 0 1 0 7l-1.5 1.5a5 5 0 0 1-7-7L7 11"/>
+                </svg>
+
+                <a href="{{ .Params.event_url | default .Permalink }}" target="_blank">{{ .Title | truncate 50 }}</a>
+              </td>
+              <!-- Location -->
+              <td class="event-location">
+                {{ $city := .Params.city }}
+                {{ $country := .Params.country }}
+
+                {{ if and $city (not (findRE "[0-9]" $city)) }}
+                  {{ $city }}{{ if $country }},{{ end }}
+                {{ end }}
+                {{ if $country }}
+                  {{ $country }}
+                {{ end }}
+              </td>
+              <!-- Date -->
+              <td class="event-date">
+                {{ $eventDate := .Params.event_date | time }}
+
+                <span class="event-day">{{ $eventDate.Format "02" }}</span>
+                <span class="event-month">{{ $eventDate.Format "January" }}</span>
+
+                {{ if and .Params.event_date_end (ne .Params.event_date_end .Params.event_date) }}
+                  &nbsp;&raquo;&nbsp;
+                  {{ $eventDateEnd := .Params.event_date_end | time }}
+                  <span class="event-day">{{ $eventDateEnd.Format "02" }}</span>
+                  <span class="event-month">{{ $eventDateEnd.Format "January" }}</span>
+                {{ end }}
+              </td>
+              <!-- Category -->
+              <td>
+                <p class="event-category {{ .Params.event_category }}">
+                  {{ with .Params.event_category }}{{ . }}{{ else }}—{{ end }}
+                </p>
+              </td>
+              <!-- Host -->
+              <td class="event-host">{{ .Params.event_host }}</td>
+            </tr>
+            {{ end }}
+          </tbody>
+        </table>
+      </section>
   </div>
 </section>
 
