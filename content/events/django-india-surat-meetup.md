@@ -18,7 +18,7 @@ params:
   event_url: "https://www.djangoindia.org/events/django-india-surat-meetup"
   latitude: 21.193230564124494
   longitude: 72.78770029642357
-  country: "Gujarat 395009"
+  country: "Gujarat"
   city: "Surat"
   venue_name: ""
   venue_address: "Crest Infosystems, 411-414, Wood Square, L.P. Savani Road, Adajan, Surat, Gujarat 395009"

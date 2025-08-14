@@ -21,13 +21,21 @@
 
 <section class="events" id="events">
 
-    {{ $today := now.Format "2006-01-02" }}
-    <div class="table">
+    {{ $today := now.UTC.Format "2006-01-02" }}
+    <div class="table event-dropdown">
+      <input type="checkbox" id="toggle-upcoming" checked hidden>
       <!-- Upcoming Events -->
       <section class="table__header">
-        <h2>Upcoming Events</h2>
+        <label class="event-toggle" for="toggle-upcoming">
+          <h2>Upcoming Events</h2>
+          <svg class="arrow-icon-upcoming" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"
+              viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M19 9l-7 7-7-7" />
+          </svg>
+        </label>
       </section>
-      <section class="table__body">
+      <section class="table__body dropdown-content">
         <table class="event-table">
           <thead>
             <tr class="table-header">
@@ -93,12 +101,21 @@
         </table>
       </section>
     </div>
-    <div class="table">
+
+    <div class="table event-dropdown">
+      <input type="checkbox" id="toggle-past" hidden>
       <!-- Past events -->
       <section class="table__header">
-        <h2>Past Events</h2>
+        <label class="event-toggle" for="toggle-past">
+          <h2>Past Events</h2>
+          <svg class="arrow-icon-past" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"
+            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M19 9l-7 7-7-7" />
+          </svg>
+        </label>
       </section>
-      <section class="table__body">
+      <section class="table__body dropdown-content">
         <table class="event-table">
           <thead>
             <tr class="table-header">

@@ -18,7 +18,7 @@ params:
   event_url: "https://www.djangoindia.org/events/django-india-x-gdg-lucknow-meetup"
   latitude: 26.79861619006337
   longitude: 81.02452403647303
-  country: "Uttar Pradesh 226002"
+  country: "Uttar Pradesh"
   city: "Ahmamau"
   venue_name: ""
   venue_address: "IIIT Lucknow, Chak Ganjaria, C, G. City, Lucknow, Ahmamau, Uttar Pradesh 226002"

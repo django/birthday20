@@ -18,8 +18,8 @@ params:
   event_url: "https://2025.djangocon.africa/"
   latitude: -3.387004436658432
   longitude: 36.684249993336
-  country: "Tanzania hasn't been officially announced yet."
-  city: "specific"
+  country: "Tanzania"
+  city: "Arusha"
   venue_name: ""
   venue_address: "The specific location within Arusha, Tanzania hasn't been officially announced yet."
   social_media:

@@ -18,8 +18,8 @@ params:
   event_url: "https://piterpy.com/en/"
   latitude: 59.80838502079718
   longitude: 30.327330060211512
-  country: "196210"
-  city: "Russia"
+  country: "Russia"
+  city: "Petersburg"
   venue_name: ""
   venue_address: "Startovaya Ulitsa, 6A, St Petersburg, Russia, 196210"
   social_media:

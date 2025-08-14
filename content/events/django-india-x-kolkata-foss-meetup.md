@@ -18,7 +18,7 @@ params:
   event_url: "https://www.djangoindia.org/events/django-india-x-kolkata-foss-meetup"
   latitude: 22.751445472174623
   longitude: 88.51928993638168
-  country: "West Bengal 743248"
+  country: "West Bengal"
   city: "Bamangachi"
   venue_name: ""
   venue_address: "Technicise Software & Technologies Pvt Ltd, Kulberia, Bamunpara, Bamangachi, West Bengal 743248"

@@ -18,8 +18,8 @@ params:
   event_url: "https://2025.pycon.it/it"
   latitude: 44.509914779475274
   longitude: 11.386261228559706
-  country: "40127 Bologna BO"
-  city: "2"
+  country: "Italy"
+  city: "Bologna"
   venue_name: ""
   venue_address: "Via del Pilastro, 2, 40127 Bologna BO"
   social_media:

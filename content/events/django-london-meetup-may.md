@@ -18,8 +18,8 @@ params:
   event_url: "https://www.meetup.com/djangolondon/events/307281281/?utm_medium=referral&utm_campaign=share-btn_savedevents_share_modal&utm_source=link"
   latitude: 51.514424215530205
   longitude: -0.09051510612107715
-  country: "London EC2R 8DD · London"
-  city: "of"
+  country: "United Kingdom"
+  city: "London"
   venue_name: ""
   venue_address: "Old Jewry, City of London, London EC2R 8DD · London"
   social_media:

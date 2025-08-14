@@ -18,8 +18,8 @@ params:
   event_url: "https://www.meetup.com/pythonpescara/events/307336823/?utm_medium=referral&utm_campaign=share-btn_savedevents_share_modal&utm_source=link"
   latitude: 42.38088964747039
   longitude: 14.122860773204598
-  country: "65012 Villanova PE"
-  city: "Torino"
+  country: "Italy"
+  city: "Villanova"
   venue_name: ""
   venue_address: "Via Torino, 65012 Villanova PE"
   social_media:

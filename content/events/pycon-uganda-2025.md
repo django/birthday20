@@ -18,7 +18,7 @@ params:
   event_url: "https://ug.pycon.org/"
   latitude: 0.31749216212313847
   longitude: 32.58401552572154
-  country: "Uganda - (The Venue will be announced soon.)"
+  country: "Uganda"
   city: "Kampala"
   venue_name: ""
   venue_address: "Kampala, Uganda - (The Venue will be announced soon.)"

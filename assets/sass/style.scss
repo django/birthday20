@@ -488,7 +488,6 @@ section.events {
     height: 100%;
     background-color: #fff5;
     backdrop-filter: blur(7px);
-    box-shadow: 0 0.4rem 0.8rem #0005;
     border-radius: 0.8rem;
     margin-top: 2rem;
     overflow: hidden;
@@ -504,6 +503,28 @@ section.events {
       width: 100%;
       height: 15%;
       padding: 0.8rem 1rem;
+
+      .event-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+        margin-right: 2rem;
+
+        &:hover {
+          color: $base-color-fg;
+        }
+
+        h2 {
+          margin: 1rem 1rem 0.5rem 0;
+        }
+
+        svg {
+          width: 32px;
+          height: 32px;
+          transition: transform 0.3s ease;
+        }
+      }
     }
 
     &__body {
@@ -566,6 +587,7 @@ section.events {
       }
 
       .event-link {
+        width: 30%;
         
         svg {
         width: 18px;
@@ -595,6 +617,14 @@ section.events {
         }
       }
 
+      .event-location {
+        width: 20%;
+      }
+
+      .event-date {
+        width: 20%;
+      }
+
       .event-category {
         padding: 0.4rem;
         border-radius: 2rem;
@@ -622,6 +652,7 @@ section.events {
       }
 
       .event-host {
+        width: 20%;
         font-weight: 600;
         color: #3b1f54;
       }
@@ -633,46 +664,35 @@ section.events {
       }
     }
   }
+
+  .event-dropdown {
+    input {
+      display: none;
+    }
+
+    input:not(:checked) ~ .dropdown-content {
+      display: none;
+    }
+
+    input:checked ~ .dropdown-content {
+      display: block;
+    }
+
+    // Arrow rotation
+    label svg {
+      transition: transform 0.3s ease;
+    }
+
+    // Rotate arrow based on checked state
+    input:checked + section label svg {
+      transform: rotate(180deg);
+    }
+
+    input:not(:checked) + section label svg {
+      transform: rotate(0deg);
+    }
+  }
 }
-
-
-
-
-/* .event-table {
-
-  margin-top: 10px;
-
-  width: 100%;
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  border-collapse: collapse;
-
-  td, th {
-    padding: 8px;
-    margin: 0;
-  }
-
-  thead {
-    th {
-      text-align: left;
-    }
-  }
-
-  th.date {
-    width: 170px;
-  }
-
-
-  tbody {
-    tr:nth-child(odd) td {
-      background: rgba(255, 255, 255, 0.5);
-    }
-    tr:nth-child(even) td {
-      background: rgba(255, 255, 255, 0.6);
-    }
-  }
-
-} */
-
 
 // TODO: Properly integrate this CSS into the SASS + theme
 

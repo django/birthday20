@@ -18,7 +18,7 @@ params:
   event_url: "https://www.djangoindia.org/events/django-india-chennai-meetup"
   latitude: 13.013546399818681
   longitude: 80.21137008595615
-  country: "Tamil Nadu 600032"
+  country: "India"
   city: "Chennai"
   venue_name: ""
   venue_address: "HappyFox Technologies LLP, Svk Tower, Thiru Vi Ka Industrial Estate, SIDCO Industrial Estate, Guindy, Chennai, Tamil Nadu 600032"
