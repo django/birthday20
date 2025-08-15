@@ -7,10 +7,10 @@ This is a [Hugo](https://gohugo.io/) project.
 Running with Docker
 -------------------
 
-In `docker-compose.yml`, we have specified a `serve` target which you can run locally like this:
+We have a docker compose file that allows you to run the site easily:
 
 ```bash
-docker compose run --rm -u `id -u` --service-ports serve
+docker compose up
 ```
 
 Running without Docker
