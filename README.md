@@ -1,6 +1,6 @@
 # django-birthday20
 
-Static site for the Django birthday website
+Static site for the Django's 20th birthday website
 
 This is a [Hugo](https://gohugo.io/) project.
 
