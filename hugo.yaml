@@ -34,8 +34,8 @@ languages:
     # If no images are found, Hugo looks for images (images: [""]) in your site config
     # If no image if found, then an image-less Twitter summary card is used instead of summary_large_image
     # https://digitaldrummerj.me/hugo-preview-when-sharing-twitter/
-#    params:
-#      images: ["/images/some_card_da.png"]
+    params:
+      images: ["/images/some_preview.png"]
     LanguageName: English
     menu:
       main:
