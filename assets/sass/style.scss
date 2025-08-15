@@ -159,7 +159,8 @@ header {
 }
 
 /* BREAKPOINTS FOR NAVIGATION */
-@media only screen and (max-width: 400px) { // Adjust breakpoint based on number of links
+$menu-links: {{ len .Site.Menus.main }};
+@media only screen and (max-width: #{($menu-links * 100) + 200}px) { // Adjust breakpoint based on number of links
   #check:checked~.icons #menu-icon {
     display: none;
   }
@@ -202,8 +203,9 @@ header {
     box-shadow: 0 0.5rem rgba(0, 0, 0, 0.5);
   }
 
+  $nav-height: 2rem + ($menu-links * 2rem);
   #check:checked~.main-nav {
-    height: 6rem; // Adjust height based on number of links
+    height: #{$nav-height}; // Adjust height based on number of links
     padding: 0.5rem 0;
   }
 
