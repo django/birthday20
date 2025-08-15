@@ -1,7 +1,7 @@
 services:
   serve:
     # See: https://docker.hugomods.com/docs/tags/
-    image: hugomods/hugo:base-0.147.9
+    image: hugomods/hugo:base-0.148.2
     command: server
     volumes:
       - ".:/src"
