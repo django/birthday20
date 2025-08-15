@@ -5,5 +5,10 @@ description = "20th birthday celebration website for Django project"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-    "hugo==0.147.9",
+    "hugo==0.148.2",
 ]
+
+[tool.uv]
+package = false
+# The earliest version that supports the current lock file revision
+required-version = ">=0.8.4"
