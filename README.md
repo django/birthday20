@@ -16,22 +16,10 @@ docker compose run --rm -u `id -u` --service-ports serve
 Running without Docker
 ----------------------
 
-Go to [Hugo Github release](https://github.com/gohugoio/hugo/releases)
-and fetch the latest package for **hugo\_extended** for your system.
-
-We want to align with the latest version always. If it doesn't work,
-file an issue!
-
-Example recipe for Ubuntu/Debian:
-
 ```bash
-# Fetch .deb package from GitHub
-wget https://github.com/gohugoio/hugo/releases/download/v0.147.9/hugo_extended_0.147.9_linux-amd64.deb -O hugo_extended.deb
+# Install dependencies
+uv sync
 
-# Install package
-sudo apt install ./hugo_extended.deb
-
-# Now from inside the cloned copy of this repository, run the Hugo development server:
-hugo server
+# Run hugo server
+uv run hugo server
 ```
-
