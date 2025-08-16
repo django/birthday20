@@ -1,0 +1,53 @@
+name: "Lint & formatting check"
+
+on:
+  push:
+    branches:
+      - main
+  pull_request: ~
+
+env:
+  PYTHON_VERSION: 3.13.6
+  UV_VERSION: 0.8.11
+
+jobs:
+  run-pre-commit:
+    name: pre-commit run --all-files
+    runs-on: ubuntu-24.04
+    timeout-minutes: 1
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v5
+
+    - name: Install uv ${{ env.UV_VERSION }} & Python ${{ env.PYTHON_VERSION }}
+      id: setup-uv
+      uses: astral-sh/setup-uv@v6
+      with:
+        enable-cache: true
+        python-version: ${{ env.PYTHON_VERSION }}
+        version: ${{ env.UV_VERSION }}
+
+    - name: Cache pre-commit
+      id: cache-precommit
+      uses: actions/cache@v4
+      with:
+        path: ~/.cache/pre-commit
+        key: >
+          pre-commit-
+          ${{ runner.os }}-
+          ${{ env.UV_VERSION }}-
+          ${{ env.PYTHON_VERSION }}-
+          ${{ hashFiles('.pre-commit-config.yaml') }}
+        restore-keys: >
+          pre-commit-
+          ${{ runner.os }}-
+          ${{ env.UV_VERSION }}-
+          ${{ env.PYTHON_VERSION }}-
+
+    - name: Run pre-commit
+      run: >
+        uv run
+        --no-sync
+        --with pre-commit
+        pre-commit run --all-files
