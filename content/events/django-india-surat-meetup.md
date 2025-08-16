@@ -28,4 +28,3 @@ params:
 # Django India Surat meetup
 
 09:00 AM (IST)
-

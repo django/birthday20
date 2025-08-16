@@ -28,4 +28,3 @@ params:
 # Hap.py Birthday Python Pescara
 
 8:00 PM AM CEST
-

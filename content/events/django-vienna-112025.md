@@ -28,4 +28,3 @@ params:
 # Django-Vienna 11/2025
 
 6:30 PM to 9:30 PM CET
-

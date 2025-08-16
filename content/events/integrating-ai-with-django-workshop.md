@@ -28,4 +28,3 @@ params:
 # Integrating AI with Django Workshop
 
 GMT+1 11am
-

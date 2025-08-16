@@ -28,4 +28,3 @@ params:
 # DjangoCon US 2025
 
 September 8-12th, 2025
-

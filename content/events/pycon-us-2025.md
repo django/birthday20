@@ -28,4 +28,3 @@ params:
 # PyCon US 2025
 
 May 14 - May 22, 2025
-

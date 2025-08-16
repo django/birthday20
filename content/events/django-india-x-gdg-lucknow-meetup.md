@@ -28,4 +28,3 @@ params:
 # Django India X GDG Lucknow meetup
 
 10:00 AM (IST)
-

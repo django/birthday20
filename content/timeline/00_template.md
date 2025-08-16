@@ -12,10 +12,10 @@ params:
   # release = a django release
   # app = significant external app (like South)
   timeline_type: milestone
-  
+
   # If it's a release, you can add:
   # timeline_release: "1.2"
-  
+
   # For events that really don't have a date, you can add them to a year
   # by defining:
   # timeline_date_only_year: true

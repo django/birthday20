@@ -28,4 +28,3 @@ params:
 # PyCon JP 2025
 
 September 26-27, 2025
-

@@ -28,4 +28,3 @@ params:
 # PyConFR 2025
 
 October 30th – November 2nd 2025
-

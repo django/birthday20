@@ -28,4 +28,3 @@ params:
 # PyCon Thailand 2025
 
 17-18 October 2025
-

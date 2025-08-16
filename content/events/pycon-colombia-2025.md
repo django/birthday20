@@ -28,4 +28,3 @@ params:
 # PyCon Colombia 2025
 
 July 4 · 7am - July 6 · 6pm GMT-5
-
