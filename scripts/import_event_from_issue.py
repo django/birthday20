@@ -129,4 +129,3 @@ found_content["city"] = city
 found_content["country"] = country
 
 print(template.format(**found_content))
-

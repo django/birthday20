@@ -28,4 +28,3 @@ params:
 # PyCon Italia 2025
 
 28 - 31 Maggio 2025
-

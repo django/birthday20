@@ -28,4 +28,3 @@ params:
 # Django London Meetup May
 
 6:15 PM to 9:15 PM BST
-

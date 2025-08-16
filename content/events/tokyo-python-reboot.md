@@ -28,4 +28,3 @@ params:
 # Tokyo Python Reboot
 
 11:30 AM CEST
-

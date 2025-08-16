@@ -28,4 +28,3 @@ params:
 # Django India Chennai meetup
 
 10:00 AM (IST)
-

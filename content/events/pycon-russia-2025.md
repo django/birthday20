@@ -28,4 +28,3 @@ params:
 # PyCon Russia 2025
 
 25 - 26 Jul 2025
-
