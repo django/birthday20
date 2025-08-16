@@ -44,9 +44,3 @@ If you need to update your event later, you would have to find it in [/content/e
 ## Option 2: Adding the event via GitHub form
 
 The easiest way to create an event is to [submit an issue to our GitHub repository](https://github.com/django/birthday20/issues/new) where you should select the "Add event" type.
-
-## Sending a Pull Request
-
-It's possible (but not mandatory) to create the event directly with a pull request and at the same time run this website locally so you can see how it looks before it's published. See the [README](https://github.com/django/birthday20/) of the repository.
-
-If you need to update your event later, you would have to find it in [/content/events/](https://github.com/django/birthday20/tree/main/content/events) and submit a pull request to change the markdown file.
