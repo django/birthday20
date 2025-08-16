@@ -22,4 +22,3 @@ options="2000x2000"
 alt="Django Pony wallpaper by Bryan Veloso and iStockPhoto"
 class="photo"
 >}}
-

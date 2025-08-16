@@ -48,16 +48,16 @@ function renderEvents(geojsonData) {
 			const eventDate = new Date(props.date + "T00:00:00Z");
 		  let eventDateEnd = null;
 			if (props.end_date) {
-  			eventDateEnd = new Date(props.end_date + "T00:00:00Z");			  
+  			eventDateEnd = new Date(props.end_date + "T00:00:00Z");
 			}
-			
+
 		  let formattedDate = eventDate.toLocaleDateString("en-US", {
 			  weekday: "long",
 			  year: "numeric",
 			  month: "long",
 			  day: "numeric",
 			  timeZone: "UTC",
-		  });		  
+		  });
 			if (eventDateEnd) {
 			  formattedDate += "-" + eventDateEnd.toLocaleDateString("en-US", {
 				  weekday: "long",
@@ -117,13 +117,13 @@ var legend = L.control({ position: 'bottomright' });
 legend.onAdd = function (map) {
 	var div = L.DomUtil.create('div', 'info legend');
 	var categories = Object.keys(categoryColors);
-	
+
 	categories.forEach(function(category) {
 		div.innerHTML +=
 		  '<i style="background:' + categoryColors[category] + '; width: 18px; height: 18px; display: inline-block; margin-right: 8px;"></i>' +
 		  category.charAt(0).toUpperCase() + category.slice(1) + '<br>';
 	  });
-	
+
 	  return div;
 };
 

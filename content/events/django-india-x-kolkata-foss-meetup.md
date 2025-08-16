@@ -28,4 +28,3 @@ params:
 # Django India X Kolkata FOSS meetup
 
 04:00 PM (IST)
-

@@ -59,4 +59,3 @@ params:
 <!-- Replace with other CoC if needed -->
 
 Please see the [Code of Conduct from the 2024 Django Day Copenhagen](https://2024.djangoday.dk/conduct/).
-

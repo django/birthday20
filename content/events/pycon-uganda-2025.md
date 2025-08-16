@@ -28,4 +28,3 @@ params:
 # PyCon Uganda 2025
 
 6 - 10th August, 2025
-

@@ -28,4 +28,3 @@ params:
 # Python Brasil 2025
 
 October 21–27, 2025
-

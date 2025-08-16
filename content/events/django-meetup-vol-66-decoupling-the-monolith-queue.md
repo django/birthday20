@@ -28,4 +28,3 @@ params:
 # Django Meetup Vol. 66 / Decoupling the Monolith: Queue(bie) your business logic
 
 6:30 PM to 9:00 PM CEST
-

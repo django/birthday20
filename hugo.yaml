@@ -28,14 +28,13 @@ languages:
     title: "Django's 20 year birthday!"
     params:
       description: "Celebrating 20 years of Django - Find and share events, learn about Django's future and history, get special merch"
+      images: ["/images/some_preview.png"]
     weight: 2
     # First Hugo looks in your post front matter for an images value (images: [""])
     # Then Hugo searchs for image page resources with feature, cover or thumbnail in their name. These are images files under a directory that matches the post (e.g. content\posts\first-post)
     # If no images are found, Hugo looks for images (images: [""]) in your site config
     # If no image if found, then an image-less Twitter summary card is used instead of summary_large_image
     # https://digitaldrummerj.me/hugo-preview-when-sharing-twitter/
-    params:
-      images: ["/images/some_preview.png"]
     LanguageName: English
     menu:
       main:

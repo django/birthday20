@@ -43,11 +43,11 @@ params:
 """
 
 for event in data:
-    
+
     new_file = open(f"content/events/{event['fields']['slug']}.md", "w")
-    
+
     fields = event["fields"]
-    
+
     try:
         if "Japan" in fields["address"]:
             city_and_zip = fields["address"].split(", ")[1].split(" ")
@@ -65,20 +65,17 @@ for event in data:
     except IndexError:
         print(fields["address"])
         raise Exception("")
-    
+
     if not "city" in fields:
         fields["city"] = "Unknown"
     if not "country" in fields:
         fields["country"] = "Unknown"
-    
+
     if fields["event_category"] == "local_community":
         fields["event_category"] = "meetup"
-    
+
     new_content = template.format(
       **fields
     )
     new_file.write(new_content)
     new_file.close()
-    
-    
-    

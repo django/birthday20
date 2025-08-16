@@ -18,7 +18,7 @@
   {{ $sass := resources.Get "sass/style.scss" | resources.ExecuteAsTemplate "style.scss" . }}
   {{ $style := $sass | css.Sass | resources.Minify | resources.Fingerprint }}
   <link rel="stylesheet" href="{{ $style.Permalink }}" />
-  
+
   <link href="/css/zoom-vanilla.min.css" rel="stylesheet">
 
   {{ template "_internal/twitter_cards.html" . }}

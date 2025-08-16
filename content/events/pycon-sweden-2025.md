@@ -28,4 +28,3 @@ params:
 # PyCon Sweden 2025
 
 30-31 October 2025
-

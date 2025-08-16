@@ -28,4 +28,3 @@ params:
 # PyCon Estonia 2025
 
 Oct. 2 - 3 2025
-

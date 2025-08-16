@@ -28,4 +28,3 @@ params:
 # PiterPy 2025
 
 May 16–17
-

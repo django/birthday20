@@ -28,4 +28,3 @@ params:
 # Swiss Python Summit 2025
 
 16 and 17 October 2025
-

@@ -28,4 +28,3 @@ params:
 # PyBay 2025
 
 From 18 Oct. at 5pm UTC through 19 Oct. at 2am UTC , 2025
-

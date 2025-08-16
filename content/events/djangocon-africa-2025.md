@@ -28,4 +28,3 @@ params:
 # DjangoCon Africa 2025
 
 11 - 15 August, 2025
-

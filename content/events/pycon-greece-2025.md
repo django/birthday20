@@ -28,4 +28,3 @@ params:
 # PyCon Greece 2025
 
 29–30 August 2025
-

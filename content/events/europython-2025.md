@@ -28,4 +28,3 @@ params:
 # EuroPython 2025
 
 14-20 July, 2025
-

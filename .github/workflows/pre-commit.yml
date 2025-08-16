@@ -1,0 +1,28 @@
+name: "Lint & formatting check"
+
+on:
+  push:
+    branches:
+      - main
+  pull_request: ~
+
+env:
+  PYTHON_VERSION: 3.13.6
+
+jobs:
+  run-pre-commit:
+    name: pre-commit run --all-files
+    runs-on: ubuntu-24.04
+    timeout-minutes: 1
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v5
+
+    - name: Install Python ${{ env.PYTHON_VERSION }}
+    - uses: actions/setup-python@v5
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+
+    - name: Run pre-commit
+      uses: pre-commit/action@v3.0.1

@@ -26,6 +26,3 @@ params:
 ---
 
 # PyDay Valparaíso 2025
-
-
-

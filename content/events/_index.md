@@ -13,4 +13,3 @@ params:
   subtitle: "Find your local event - on the map or a list"
 
 ---
-

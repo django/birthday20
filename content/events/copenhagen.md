@@ -35,7 +35,7 @@ The schedule is like this:
 
 <pre>
 15:00 open
-16:00 welcoming keynote & cake 
+16:00 welcoming keynote & cake
 16:30 special events - please help!
 17:00 music
 18:00 the program is over
@@ -52,4 +52,3 @@ You need a ticket!
 ## Code of Conduct
 
 Please see the [Code of Conduct from the 2024 Django Day Copenhagen](https://2024.djangoday.dk/conduct/).
-
