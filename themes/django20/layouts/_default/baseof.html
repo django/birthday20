@@ -64,6 +64,13 @@
         {{ partial "hero.html" . }}
       {{ end }}
     {{ end }}
+
+    {{ if .Params.landing_page }}
+      {{ block "landing_page" . }}
+        {{ partial "landing_page.html" . }}
+      {{ end }}
+    {{ end }}
+
     {{ block "main" . }}{{ end }}
   </main>
 
