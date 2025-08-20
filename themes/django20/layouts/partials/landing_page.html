@@ -1,0 +1,12 @@
+<div class="landing-page container">
+    <div class="row">
+        <div class="happy-birthday">
+            {{ if .Title }}
+                {{ with .Title }}<h1>{{ . | safeHTML }}</h1>{{ end }}
+            {{ end }}
+        </div>
+        <div class="cake">
+            <img src="{{ "images/django-cake.png" | relURL }}" alt="The birthday cake">
+        </div>
+    </div>
+</div>
