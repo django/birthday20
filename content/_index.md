@@ -1,5 +1,5 @@
 ---
-title: "Happy birthday Django<br>
+title: "Happy Birthday Django!<br>
 🎂 🥳 🎁 🌈 🚀 🦄"
 date: "2025-07-03"
 draft: false
@@ -9,6 +9,7 @@ params:
   landing_page: True
   subtitle: "Here's to your future! And to celebrate your past!"
   subsubtitle: "Celebrating 20 years of the Django web framework - join or initiate a local birthday event, and check out special online events."
+  cssClassSuffix: landing_page
 
 ---
 

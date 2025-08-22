@@ -34,14 +34,15 @@ body {
   position: relative;
   padding: 0px;
   font-family: "Roboto", sans-serif;
+  background-image: url('{{ "images/django-cake.png" | relURL }}');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: top;
   background-attachment: fixed;
   background-color: $base-color-bg;
 
-  &.main {
-    background-image: url('{{ "images/django-cake.png" | relURL }}');
+  &.landing_page {
+    background-image: none;
   }
 }
 
@@ -573,9 +574,19 @@ footer {
   background: rgba(0, 0, 0, 0.8);
   font-size: 1em;
 
+  &.landing_page {
+    // It has no background image, so no margin needed
+    margin-top: 0px;
+  }
+
+
   @media screen and (min-width: 800px) {
     margin-top: 500px;
     font-size: 1.4em;
+    &.landing_page {
+      // It has no background image, so no margin needed
+      margin-top: 0px;
+    }
   }
 
   h5 {
