@@ -27,14 +27,57 @@ function renderEvents(geojsonData) {
   if (!geojsonData) {
     return
   }
+
+  	// Marker cluster group 
+  	var markers = L.markerClusterGroup({
+		maxClusterRadius: 15,  // Groups markers together if within 15 pixels of each other, adjustable as needed
+		showCoverageOnHover: false,
+		zoomToBoundsOnClick: false,
+	});
+	markers.on('clusterclick', function (a) {
+		let currentZoom = map.getZoom();
+		const zoomIncrement = 3; // Number of zoom levels to increase on cluster click, adjustable as needed
+		let nextZoom = currentZoom + zoomIncrement;
+		let maxZoom = map.getMaxZoom();
+	  
+		if (nextZoom > maxZoom) nextZoom = maxZoom;
+	  
+		if (nextZoom >= maxZoom - 7) {
+			// If zoom level is within 7 levels of max zoom, zoom directly to cluster bounds, adjustable as needed
+			a.layer.zoomToBounds({ padding: [20, 20] });
+		} else {
+			// Just zoom in incrementally if not near max zoom yet
+			map.flyTo(a.layer.getBounds().getCenter(), nextZoom, { duration: 0.5, animate: true });
+		}
+	  });
+	markers.on('clustermouseover', function(a) {
+		// Get all child markers of the cluster being hovered over
+		const clusteredMarkers = a.layer.getAllChildMarkers();
+	  
+		// Build the popup HTML string from all child features
+		let combinedInfo = '';
+		clusteredMarkers.forEach(marker => {
+		  if (marker.feature && marker.getPopup) {
+			const props = marker.feature.properties;
+			const popupCircleColor = getColorByCategory(props.event_category);
+			// Append a colored circle and marker name to the popup
+			combinedInfo += `<b><span style="display:inline-block; width:12px; height:12px; background-color: ${popupCircleColor}; border-radius:50%; margin-right:6px; vertical-align:middle;"></span><span style="color:rgb(3, 98, 136);">${props.name}</span></b><br>`;
+		  }
+		});
+	  
+		// Bind a tooltip to the cluster marker with combined info and show it
+		a.layer.bindTooltip(combinedInfo || 'No event info available', { sticky: true, direction: 'auto' }).openTooltip();
+	  });
+	  
+	  markers.on('clustermouseout', function(a) {
+		a.layer.unbindTooltip();
+	  });
+
 	const geojsonLayer = L.geoJSON(geojsonData, {
 		pointToLayer: (feature, latlng) => {
 			const category = feature.properties.event_category;
 			const color = getColorByCategory(category);
-			// console.log("Category:", category);
-			// console.log("Color:", color);
-
-			return L.circleMarker(latlng, {
+			const marker = L.circleMarker(latlng, {
 				radius: 8,
 				fillColor: color,
 				color: "#000",
@@ -42,6 +85,11 @@ function renderEvents(geojsonData) {
 				opacity: 1,
 				fillOpacity: 0.8,
 			});
+
+			// Add circle marker to the cluster group
+			markers.addLayer(marker);
+
+			return marker;
 		},
 		onEachFeature: (feature, layer) => {
 			const props = feature.properties;
@@ -75,7 +123,10 @@ function renderEvents(geojsonData) {
                 <small>${props.address}</small><br>
             `);
 		},
-	}).addTo(map);
+	})
+
+	// Add the cluster group to the map instead of geojsonLayer
+	map.addLayer(markers);
 
 	// Auto-fit only if there are features
 	if (geojsonData.features.length > 0) {
