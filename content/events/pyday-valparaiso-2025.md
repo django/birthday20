@@ -11,6 +11,7 @@ params:
   event_type: "in_person"
   event_category: "conference"
   event_date: "2025-06-13"
+  event_date_end: ""
   event_host: "PyDay Chile"
   event_localtime: ""
   event_tz: ""

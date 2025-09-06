@@ -11,6 +11,7 @@ params:
   event_type: "in_person"
   event_category: "meetup"
   event_date: "2025-06-10"
+  event_date_end: ""
   event_host: "Django Friends"
   event_localtime: ""
   event_tz: ""
