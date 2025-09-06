@@ -28,7 +28,7 @@ function renderEvents(geojsonData) {
     return
   }
 
-  	// Marker cluster group 
+  	// Marker cluster group
   	var markers = L.markerClusterGroup({
 		maxClusterRadius: 15,  // Groups markers together if within 15 pixels of each other, adjustable as needed
 		showCoverageOnHover: false,
@@ -39,9 +39,9 @@ function renderEvents(geojsonData) {
 		const zoomIncrement = 3; // Number of zoom levels to increase on cluster click, adjustable as needed
 		let nextZoom = currentZoom + zoomIncrement;
 		let maxZoom = map.getMaxZoom();
-	  
+
 		if (nextZoom > maxZoom) nextZoom = maxZoom;
-	  
+
 		if (nextZoom >= maxZoom - 7) {
 			// If zoom level is within 7 levels of max zoom, zoom directly to cluster bounds, adjustable as needed
 			a.layer.zoomToBounds({ padding: [20, 20] });
@@ -53,7 +53,7 @@ function renderEvents(geojsonData) {
 	markers.on('clustermouseover', function(a) {
 		// Get all child markers of the cluster being hovered over
 		const clusteredMarkers = a.layer.getAllChildMarkers();
-	  
+
 		// Build the popup HTML string from all child features
 		let combinedInfo = '';
 		clusteredMarkers.forEach(marker => {
@@ -64,11 +64,11 @@ function renderEvents(geojsonData) {
 			combinedInfo += `<b><span style="display:inline-block; width:12px; height:12px; background-color: ${popupCircleColor}; border-radius:50%; margin-right:6px; vertical-align:middle;"></span><span style="color:rgb(3, 98, 136);">${props.name}</span></b><br>`;
 		  }
 		});
-	  
+
 		// Bind a tooltip to the cluster marker with combined info and show it
 		a.layer.bindTooltip(combinedInfo || 'No event info available', { sticky: true, direction: 'auto' }).openTooltip();
 	  });
-	  
+
 	  markers.on('clustermouseout', function(a) {
 		a.layer.unbindTooltip();
 	  });
