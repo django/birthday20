@@ -23,7 +23,9 @@ function getColorByCategory(category) {
 	return categoryColors[category];
 }
 
-function renderEvents(geojsonData) {
+let singleEventPopupLayer = null;
+
+function renderEvents(geojsonData, singleEventGeojsonData) {
   if (!geojsonData) {
     return
   }
@@ -31,8 +33,6 @@ function renderEvents(geojsonData) {
 		pointToLayer: (feature, latlng) => {
 			const category = feature.properties.event_category;
 			const color = getColorByCategory(category);
-			// console.log("Category:", category);
-			// console.log("Color:", color);
 
 			return L.circleMarker(latlng, {
 				radius: 8,
@@ -74,20 +74,36 @@ function renderEvents(geojsonData) {
                 ${formattedDate}<br>
                 <small>${props.address}</small><br>
             `);
+
+			if (singleEventGeojsonData && feature === singleEventGeojsonData) {
+				singleEventPopupLayer = layer;
+			}
 		},
 	}).addTo(map);
 
 	// Auto-fit only if there are features
-	if (geojsonData.features.length > 0) {
+	if (geojsonData.features.length > 0 && !singleEventGeojsonData) {
 		map.fitBounds(geojsonLayer.getBounds(), {
 			//padding: [20, 20],
 			//maxZoom: 14,
 		});
 	}
+
+	if (singleEventGeojsonData) {
+		map.fitBounds(L.geoJSON({ type: "FeatureCollection", features: [singleEventGeojsonData] }).getBounds().pad(0.2));
+		singleEventPopupLayer.openPopup();
+	}
 }
 
+let eventDetailData = null;
+if (singleEventData) {
+    eventDetailData = eventsData.features.find(f =>
+		(f.properties.name && singleEventData.title && f.properties.name === singleEventData.title) &&
+		(f.properties.date && singleEventData.event_date && f.properties.date === singleEventData.event_date)
+	);
+}
 // Render events directly from Hugo data
-renderEvents(eventsData);
+renderEvents(eventsData, eventDetailData);
 
 // Reset view control
 L.Control.ResetView = L.Control.extend({
@@ -104,7 +120,16 @@ L.Control.ResetView = L.Control.extend({
 	_resetView: function (e) {
 		L.DomEvent.stopPropagation(e);
 		L.DomEvent.preventDefault(e);
-		this._map.setView([30, 0], 2);
+
+		// If you have a single event layer with bounds
+        if (eventDetailData && eventDetailData.geometry) {
+            this._map.fitBounds(L.geoJSON({ type: "FeatureCollection", features: [eventDetailData] }).getBounds().pad(0.2));
+			singleEventPopupLayer.openPopup();
+        }
+		else {
+        	// Else, fallback to default view, the world view
+			this._map.setView([30, 0], 2);
+		}
 	},
 });
 
