@@ -83,8 +83,7 @@ function renderEvents(geojsonData, singleEventGeojsonData) {
 		pointToLayer: (feature, latlng) => {
 			const category = feature.properties.event_category;
 			const color = getColorByCategory(category);
-
-			return L.circleMarker(latlng, {
+			const marker = L.circleMarker(latlng, {
 				radius: 8,
 				fillColor: color,
 				color: "#000",
@@ -92,6 +91,11 @@ function renderEvents(geojsonData, singleEventGeojsonData) {
 				opacity: 1,
 				fillOpacity: 0.8,
 			});
+
+			// Add circle marker to the cluster group
+			markers.addLayer(marker);
+
+			return marker;
 		},
 		onEachFeature: (feature, layer) => {
 			const props = feature.properties;
@@ -129,7 +133,10 @@ function renderEvents(geojsonData, singleEventGeojsonData) {
 				singleEventPopupLayer = layer;
 			}
 		},
-	}).addTo(map);
+	})
+
+	// Add the cluster group to the map instead of geojsonLayer
+	map.addLayer(markers);
 
 	// Auto-fit only if there are features
 	if (geojsonData.features.length > 0 && !singleEventGeojsonData) {
