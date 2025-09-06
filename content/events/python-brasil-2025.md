@@ -11,6 +11,7 @@ params:
   event_type: "in_person"
   event_category: "conference"
   event_date: "2025-10-21"
+  event_date_end: "2025-10-27"
   event_host: "Python Brasil"
   event_localtime: ""
   event_tz: ""

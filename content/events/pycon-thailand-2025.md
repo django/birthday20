@@ -11,6 +11,7 @@ params:
   event_type: "in_person"
   event_category: "conference"
   event_date: "2025-10-17"
+  event_date_end: "2025-10-18"
   event_host: "PyCon Thailand"
   event_localtime: ""
   event_tz: ""
@@ -20,7 +21,7 @@ params:
   longitude: 100.60218598854522
   country: "Thailand"
   city: "10260"
-  venue_name: ""
+  venue_name: "Avani Sukhumvit Bangkok Hotel"
   venue_address: "2089 Sukhumvit Rd, Prakanong Nua Watthana, Bangkok 10260, Thailand"
   social_media:
 ---

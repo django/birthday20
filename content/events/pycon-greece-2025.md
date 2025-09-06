@@ -11,6 +11,7 @@ params:
   event_type: "in_person"
   event_category: "conference"
   event_date: "2025-08-29"
+  event_date_end: "2025-08-30"
   event_host: "PyCon Greece"
   event_localtime: ""
   event_tz: ""

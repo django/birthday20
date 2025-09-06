@@ -11,6 +11,7 @@ params:
   event_type: "in_person"
   event_category: "conference"
   event_date: "2025-05-14"
+  event_date_end: "2025-05-22"
   event_host: "PyCon US"
   event_localtime: ""
   event_tz: ""
