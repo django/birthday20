@@ -11,6 +11,7 @@ params:
   event_type: "hybrid"
   event_category: "conference"
   event_date: "2025-05-16"
+  event_date_end: "2025-05-17"
   event_host: "PiterPy"
   event_localtime: ""
   event_tz: ""

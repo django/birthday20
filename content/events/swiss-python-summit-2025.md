@@ -11,6 +11,7 @@ params:
   event_type: "in_person"
   event_category: "conference"
   event_date: "2025-10-16"
+  event_date_end: "2025-10-17"
   event_host: "Swiss Python Summit"
   event_localtime: ""
   event_tz: ""

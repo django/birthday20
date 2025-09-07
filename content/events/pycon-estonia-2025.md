@@ -11,6 +11,7 @@ params:
   event_type: "in_person"
   event_category: "conference"
   event_date: "2025-10-02"
+  event_date_end: "2025-10-03"
   event_host: "PyCon Estonia"
   event_localtime: ""
   event_tz: ""

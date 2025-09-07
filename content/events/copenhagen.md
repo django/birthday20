@@ -8,6 +8,7 @@ params:
   event_type: "in_person"
   event_category: "meetup"
   event_date: "2025-10-10"
+  event_date_end: ""
   event_localtime: "15:00"
   event_host: "Django Denmark"
   event_tz: "+02:00"

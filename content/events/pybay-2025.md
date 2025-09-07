@@ -11,6 +11,7 @@ params:
   event_type: "in_person"
   event_category: "conference"
   event_date: "2025-10-18"
+  event_date_end: ""
   event_host: "PyBay"
   event_localtime: ""
   event_tz: ""

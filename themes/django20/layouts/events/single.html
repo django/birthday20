@@ -21,6 +21,12 @@
 {{ end }}
 
 {{ define "main" }}
+  {{ $events := (where (.Site.GetPage "/events").Pages.ByDate "published" "!=" "false") }}
+
+  <section class="map" id="event-map">
+    <div class="container">
+    {{ partial "events_map.html" (dict "events" $events "sigleEvent" .Params "context" .) }}
+  </section>
   <section>
     <div class="container container-main {{ .Params.cssClassSuffix }}">
       <article class="{{ .Params.cssClassSuffix }}">

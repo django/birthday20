@@ -10,18 +10,19 @@ draft: false
 params:
   event_type: "in_person"
   event_category: "conference"
-  event_date: "2025-08-06"
+  event_date: "2025-08-07"
+  event_date_end: "2025-08-09"
   event_host: "PyCon Uganda"
   event_localtime: ""
   event_tz: ""
   event_languages: ""
   event_url: "https://ug.pycon.org/"
-  latitude: 0.31749216212313847
-  longitude: 32.58401552572154
+  latitude: 0.33391140953919884
+  longitude: 32.56802819711846
   country: "Uganda"
   city: "Kampala"
-  venue_name: ""
-  venue_address: "Kampala, Uganda - (The Venue will be announced soon.)"
+  venue_name: "Ivory Tower, Makerere University"
+  venue_address: "8HM9+F27, University Rd, Kampala, Uganda"
   social_media:
 ---
 
