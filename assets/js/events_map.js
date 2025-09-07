@@ -135,7 +135,7 @@ function renderEvents(geojsonData, singleEventGeojsonData) {
 		},
 	})
 
-	// Add the cluster group to the map instead of geojsonLayer
+	// Add the cluster group to the map
 	map.addLayer(markers);
 
 	// Auto-fit only if there are features
