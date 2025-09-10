@@ -32,6 +32,8 @@ We've done a lot of Django Day Copenhagen in the past, in fact we've done 5! But
 
 We booked the basement at Too Old To Die Young, a bar on Nørrebro. From 15:00, we're open and you can come by for an after-work drink, snacks and cake.
 
+If you're interested in doing something fun at the event, please reach out to info@django-denmark.org
+
 The schedule is like this:
 
 <pre>
@@ -46,7 +48,7 @@ If you are hungry at 18, it should be possible to eat at the venue, but we have 
 
 ## How to attend
 
-You need a ticket!
+You need a ticket! It's very cheap, and we pay you back with cake, chips and a drink.
 
 <a href="https://djangodenmark.ticketbutler.io/e/django-birthday-copenhagen-2025">Buy tickets</a>
 
