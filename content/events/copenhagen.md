@@ -26,7 +26,7 @@ params:
 
 # Django (birth)Day Copenhagen 2025
 
-We've done a lot of Django Day Copenhagen in the past, in fact we've done 5! But this year, we needed a break, and what better way to have a break than to do a birthday for Django!?
+We've done a lot of Django Day Copenhagen in the past, in fact we've done 5! But this year, we needed a break, and what better way to have a break than to celebrate Django's birthday together!?
 
 ## What we're gonna do
 
