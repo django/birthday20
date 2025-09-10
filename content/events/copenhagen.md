@@ -15,7 +15,7 @@ params:
   event_languages: "English and Danish"
   # event_url: "https://djangodenmark.ticketbutler.io/e/django-birthday-copenhagen-2025"
   latitude: 55.688760741873296
-  logitude: 12.562392797555058
+  longitude: 12.562392797555058
   country: "Denmark"
   city: "Copenhagen"
   venue_name: "Too Old To Die Young"
