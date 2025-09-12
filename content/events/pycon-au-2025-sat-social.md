@@ -1,4 +1,5 @@
---
+
+---
 title: "Django Birthday Social Event Melbourne 2025"
 description: "Come celebrate Django with your Django friends, for socialisation and fun! Let's catch up and talk about this framework that's given so much."
 date: "2025-01-01"
@@ -20,7 +21,7 @@ params:
   city: "Melbourne"
   venue_name: "Pullman Melbourne On The Park"
   venue_address: "192 Wellington Parade, East Melbourne VIC 3002"
-  social_media:
+  social_media: ""
 ---
 
 # Django Birthday Social Dinner/Night

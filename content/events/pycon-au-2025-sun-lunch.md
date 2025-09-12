@@ -1,3 +1,4 @@
+
 ---
 title: "Django Birthday Celebration PyCon AU attendees Melbourne 2025"
 description: "Come celebrate Django with your Django friends, cake, drinks and fun! Let's catch up and talk about this framework that's given so much."
@@ -13,14 +14,14 @@ params:
   event_tz: "+10:00"
   event_host: "Python Australia"
   event_languages: "English"
-  event_url: ""
+  event_url: "https://2025.pycon.org.au/attend/"
   latitude: -37.81586742309027
   longitude: 144.98319954795036
   country: "Australia"
   city: "Melbourne"
   venue_name: "Pullman Melbourne On The Park"
   venue_address: "192 Wellington Parade, East Melbourne VIC 3002"
-  social_media:
+  social_media: ""
 ---
 
 # PyConAU 2025 conference: Django photo
