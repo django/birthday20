@@ -1,5 +1,5 @@
 ---
-title: "Removing the magic."
+title: "Removing the magic"
 date: "2025-09-20"
 draft: false
 
