@@ -4,7 +4,7 @@ title: "🎂 Django cumple 20 años: Meetup especial en Medellín"
 # PUT A SHORT DESCRIPTION!
 description: "Este mes tenemos un meetup muy especial 🎂🎉: celebraremos los 20 años de Django, uno de los frameworks más influyentes del ecosistema Python. 🚀"
 # (NOT the event date - but the publication date, set to today's date)
-date: "2025-09-23"
+date: "2025-09-24"
 # Change this to "false" so the event will appear (the template is disabled)
 draft: false
 
@@ -46,16 +46,22 @@ params:
 ---
 
 <!-- Name of the event -->
-# Headline
+# 🎂 Django cumple 20 años: Meetup especial en Medellín
 
 <!-- Event description goes here -->
+👋 ¡Hola a todos!
+Este mes tenemos un meetup muy especial 🎂🎉: celebraremos los 20 años de Django, uno de los frameworks más influyentes del ecosistema Python. 🚀
 
-## How to attend
+Más información de la [agenda aquí](https://www.meetup.com/python-medellin/events/311193442/)
+
+## Inscripciones
+
+Inscribete por medio de [meetup](https://www.meetup.com/python-medellin/events/311193442/)
 
 <!-- Put a link to your signup form and instructions on how to attend -->
 
-## Code of Conduct
+## Código de Conducta
 
 <!-- Replace with other CoC if needed -->
 
-Please see the [Code of Conduct from the 2024 Django Day Copenhagen](https://2024.djangoday.dk/conduct/).
+Nos adherimos al Código de Conducta de Python Colombia. Puedes revisarlo [aquí](https://www.python.org.co/codigo-de-conducta/).
