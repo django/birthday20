@@ -28,7 +28,7 @@ params:
   # Fill this in if you have a website or leave empty if not
   event_url: "https://www.meetup.com/python-medellin/events/311193442/"
   # Copy values from your location on Google Maps
-  latitude: 6.19973333 
+  latitude: 6.19973333
   longitude: -75.57868611
   # Put your country
   country: "Colombia"
