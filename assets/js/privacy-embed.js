@@ -8,8 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const videoId = embed.dataset.id;
     const consentKey = "consent-" + provider + "-" + videoId;
 
-  // If consent is already given → directly load the embed
-
+    // If consent is already given → directly load the embed
     if (localStorage.getItem(consentKey) === "true") {
       loadEmbed(embed, provider, videoId, false);
     } else {
@@ -18,12 +17,10 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // It displays a placeholder before loading the actual embed
-
   function showPlaceholder(embed, provider, videoId, consentKey) {
-    const thumbnail = embed.dataset.thumbnail 
-      || (provider === "youtube" 
-          ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`
-          : "https://via.placeholder.com/480x270?text=Preview");
+    const thumbnail = embed.dataset.thumbnail || (provider === "youtube" 
+      ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`
+      : "https://via.placeholder.com/480x270?text=Preview");
 
     embed.innerHTML = `
       <div class="privacy-placeholder">
@@ -52,7 +49,6 @@ document.addEventListener("DOMContentLoaded", () => {
         src += `?autoplay=1`;
       }
     }
-   
 
     embed.outerHTML = `
       <iframe 
