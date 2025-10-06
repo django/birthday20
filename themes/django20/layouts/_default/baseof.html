@@ -84,7 +84,12 @@
   {{ end }}
 {{ end }}
 
-<script src="/js/privacy-embed.js"></script>
+{{ with resources.Get "js/privacy-embed.js" }}
+  {{ with . | fingerprint "sha256" }}
+    <script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous"></script>
+  {{ end }}
+{{ end }}
+
 </body>
 
 </html>
