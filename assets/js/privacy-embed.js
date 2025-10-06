@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // It displays a placeholder before loading the actual embed
   function showPlaceholder(embed, provider, videoId, consentKey) {
-    const thumbnail = embed.dataset.thumbnail || (provider === "youtube" 
+    const thumbnail = embed.dataset.thumbnail || (provider === "youtube"
       ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`
       : "https://via.placeholder.com/480x270?text=Preview");
 
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Actual iframe is loaded 
+  // Actual iframe is loaded
   function loadEmbed(embed, provider, videoId, autoplay) {
     let src = "";
 
@@ -51,9 +51,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     embed.outerHTML = `
-      <iframe 
-        src="${src}" 
-        frameborder="0" 
+      <iframe
+        src="${src}"
+        frameborder="0"
         allowfullscreen
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture">
       </iframe>
