@@ -350,6 +350,10 @@ $menu-links: {{ len .Site.Menus.main }};
       margin-bottom: 40px;
     }
   }
+  
+  a, a:visited, a:active {
+    color: #FFF;
+  }
 }
 
 section {
