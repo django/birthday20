@@ -9,7 +9,7 @@ params:
 
 ---
 
-Up until this point in time, Django was maintained in Subversion (SVN) and through the Trac UI on [code.djangoproject.com](https://code.djangoproject.com). But it had gotten to a point where Git and GitHub were far too good to ignore, and wrestling the migration process was impossible to avoid. On his blog, Adrian Holovati reflected on Django's migration and keeping [the community updated and for the benefit of any projects that take this leap in the future](https://www.holovaty.com/writing/django-github/). The migration process including some memorable moments, as seen in this screenshot.
+Up until this point in time, Django was maintained in Subversion (SVN) and through the Trac UI on [code.djangoproject.com](https://code.djangoproject.com). But it came to a point where Git and GitHub were far too good to ignore, and wrestling the migration process was impossible to avoid. On his blog, Adrian Holovati reflects on Django's migration and keeping [the community updated and for the benefit of any projects that take this leap in the future](https://www.holovaty.com/writing/django-github/). The migration process includes a memorable moments captured in this screenshot.
 
 
 {{< imgProc
