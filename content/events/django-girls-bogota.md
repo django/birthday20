@@ -89,7 +89,7 @@ We want to inspire more women to fall in love with programming! Django Girls Col
 
 **⚠️⏰ IMPORTANT: Registration closes October 12th, 2025! ⏰⚠️**
 
-Ready to start your programming journey? 
+Ready to start your programming journey?
 
 👉 **[REGISTER NOW at djangogirls.org](https://djangogirls.org/es/bogota/)** 👈
 
