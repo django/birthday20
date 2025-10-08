@@ -89,8 +89,8 @@ This event is perfect for:
 
 ## 📍 Venue
 
-**Universidad Jorge Tadeo Lozano - Sala Oval**  
-Carrera 4 # 22-61  
+**Universidad Jorge Tadeo Lozano - Sala Oval**
+Carrera 4 # 22-61
 Santa Fé, Bogotá, Colombia
 
 A central location in Bogotá, easily accessible by public transportation.
