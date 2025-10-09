@@ -1,5 +1,5 @@
 ---
-title: "WIP Timeline"
+title: "Timeline"
 date: "2025-07-03"
 draft: false
 
