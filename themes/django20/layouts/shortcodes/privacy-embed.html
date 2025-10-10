@@ -1,0 +1,20 @@
+{{ $provider := .Get "provider" }}
+{{ $id := .Get "id" }}
+{{ $thumbnail := .Get "thumbnail" }}
+
+<div class="privacy-embed"
+     data-provider="{{ $provider }}"
+     data-id="{{ $id }}"
+     {{ if $thumbnail }} data-thumbnail="{{ $thumbnail }}"{{ end }}>
+
+  {{ if $thumbnail }}
+    <div class="privacy-placeholder">
+      <img src="{{ $thumbnail }}" alt="Preview" loading="lazy" />
+      <p>
+        By playing this {{ $provider }} embed you accept
+        <a href="https://policies.google.com/privacy" target="_blank">privacy policy</a>.
+      </p>
+      <button class="privacy-accept">Accept & Play</button>
+    </div>
+  {{ end }}
+</div>
