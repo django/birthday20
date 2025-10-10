@@ -18,9 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // It displays a placeholder before loading the actual embed
   function showPlaceholder(embed, provider, videoId, consentKey) {
-    const thumbnail = embed.dataset.thumbnail || (provider === "youtube"
-      ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`
-      : "https://via.placeholder.com/480x270?text=Preview");
+    const thumbnail = embed.dataset.thumbnail;
 
     embed.innerHTML = `
       <div class="privacy-placeholder">
