@@ -25,6 +25,6 @@ uv run hugo server
 ```
 
 🎉 Add Your Event to Django's 20th Birthday!
----------------------
+--------------------------------------------
 
 Please follow the instructions in [`content/add-event.md`](content/add-event.md) to submit your event via Pull Request or GitHub Issue.
