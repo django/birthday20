@@ -2,9 +2,7 @@
 # PUT YOUR EVENT NAME HERE!
 title: "🎂 Django Birthday20 + Django Girls Matola #4"
 # PUT A SHORT DESCRIPTION!
-description: "🚀 Em dezembro, teremos o quarto Django Girls na cidade da Matola! 🎉
-E este ano será ainda mais especial: vamos celebrar o vigésimo aniversário do Django 🎂
-Vem aprender, conectar e comemorar conosco — tecnologia é mais divertida quando é compartilhada 💻💫"
+description: "🚀 Em dezembro, teremos o quarto Django Girls na cidade da Matola! 🎉 E este ano será ainda mais especial: vamos celebrar o vigésimo aniversário do Django 🎂 Vem aprender, conectar e comemorar conosco — tecnologia é mais divertida quando é compartilhada 💻💫"
 # (NOT the event date - but the publication date, set to today's date)
 date: "2025-10-15"
 # Change this to "false" so the event will appear (the template is disabled)
