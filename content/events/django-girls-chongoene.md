@@ -43,16 +43,35 @@ params:
 ---
 
 <!-- Name of the event -->
-# Headline
+# 🎂Workshop especial Django Girls Chongoene + Django Birthday20
 
 <!-- Event description goes here -->
+\o/
+🚀 Este ano, teremos o segundo Django Girls na cidade de Chongoene! 🎉
+E será ainda mais especial: vamos celebrar o vigésimo aniversário do Django 🎂
+Vem aprender, conectar e comemorar conosco — tecnologia é mais divertida quando é compartilhada 💻💫
 
-## How to attend
+🔸 O que vai acontecer?
+Aprenda os fundamentos de HTML, CSS, JavaScript e o poderoso framework Django.
+
+Crie o seu próprio blog do zero e mergulhe no mundo da programação!
+Descubra como corrigir bugs e se tornar mais confiante em tecnologia.
+
+🔸 Por que participar?
+É uma oportunidade única de aprender algo novo, conhecer outras mulheres inspiradoras e dar o primeiro passo para uma carreira em tecnologia.
+
+Não precisa de experiência! Vamos te guiar em cada etapa do aprendizado.
+
+✚ Info [aquí](https://djangogirls.org/en/chongoene/)
+
+## Inscrições
+
+Inscrições pelo [site](https://djangogirls.org/en/chongoene/apply)
 
 <!-- Put a link to your signup form and instructions on how to attend -->
 
-## Code of Conduct
+## Código de Conducta
 
 <!-- Replace with other CoC if needed -->
 
-Please see the [Code of Conduct from the Django Girls](https://djangogirls.org/coc/en/).
+Todos os participantes devem seguir o Código de Conducta do [Django girls ](https://djangogirls.org/coc/en/).
