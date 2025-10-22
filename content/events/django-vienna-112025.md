@@ -23,7 +23,10 @@ params:
   city: "Wien"
   venue_name: ""
   venue_address: "Rothschildplatz 3/2/ab, 1020 Wien, Austria"
-  social_media:
+  Facebook : "https://www.facebook.com/meetup/" 
+  Instagram : "https://www.instagram.com/meetup/" 
+  X : "https://x.com/Meetup/" 
+  YouTube : "http://youtube.com/meetup"  
 ---
 
 # Django-Vienna 11/2025
