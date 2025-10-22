@@ -6,7 +6,9 @@ title: "PyConFR 2025"
 description: "October 30th – November 2nd 2025"
 date: "2025-07-07"
 draft: false
-
+discourse: "https://discuss.afpy.org/"
+linkedin: "https://www.linkedin.com/company/afpy/?originalSubdomain=fr"
+website: "https://www.pycon.fr/2025/en/index.html"
 params:
   event_type: "in_person"
   event_category: "conference"
