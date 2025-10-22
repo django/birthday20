@@ -6,7 +6,10 @@ title: "Django-Vienna 11/2025"
 description: "6:30 PM to 9:30 PM CET"
 date: "2025-07-07"
 draft: false
-
+  facebook : "https://www.facebook.com/meetup/" 
+  instagram : "https://www.instagram.com/meetup/" 
+  x : "https://x.com/Meetup/" 
+  youtube : "http://youtube.com/meetup"  
 params:
   event_type: "in_person"
   event_category: "meetup"
@@ -23,10 +26,6 @@ params:
   city: "Wien"
   venue_name: ""
   venue_address: "Rothschildplatz 3/2/ab, 1020 Wien, Austria"
-  Facebook : "https://www.facebook.com/meetup/" 
-  Instagram : "https://www.instagram.com/meetup/" 
-  X : "https://x.com/Meetup/" 
-  YouTube : "http://youtube.com/meetup"  
 ---
 
 # Django-Vienna 11/2025
