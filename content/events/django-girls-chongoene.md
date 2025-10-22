@@ -5,7 +5,9 @@ description: "We inspire women to fall in love with programming. organizing a fr
 date: "2025-10-09"
 # Change this to "false" so the event will appear (the template is disabled)
 draft: false
-
+# Social Media 
+facebook: "https://www.facebook.com/djangogirlsmoz/"
+x: "https://x.com/djangogirlsmoz"
 params:
   # Possible values: "in_person", "online", "hybrid" or "radio"
   event_type: "in_person"
