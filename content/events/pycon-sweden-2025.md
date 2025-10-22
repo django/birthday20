@@ -6,7 +6,11 @@ title: "PyCon Sweden 2025"
 description: "30-31 October 2025"
 date: "2025-07-07"
 draft: false
-
+facebook: "https://www.facebook.com/pyconse"
+twitter: "https://x.com/pyconse"
+instagram: "https://www.instagram.com/pycon_sweden/"
+linkedهn: "https://www.linkedin.com/company/pycon-sweden/"
+website: "https://pycon.se/" 
 params:
   event_type: "in_person"
   event_category: "conference"
