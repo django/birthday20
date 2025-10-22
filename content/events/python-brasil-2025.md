@@ -6,7 +6,10 @@ title: "Python Brasil 2025"
 description: "October 21–27, 2025"
 date: "2025-07-07"
 draft: false
-
+youtube: "https://www.youtube.com/c/pythonbrasiloficial"
+x: "https://x.com/pythonbrasil/"
+instagram: "https://instagram.com/pythonbrasil/"
+linkedin: "https://www.linkedin.com/company/apyb/"
 params:
   event_type: "in_person"
   event_category: "conference"
