@@ -23,10 +23,10 @@ params:
   venue_name: ""
   venue_address: "Ringvägen 98, 118 60 Stockholm, Sweden"
   social_media:
-  facebook: "https://www.facebook.com/pyconse"
-  twitter: "https://x.com/pyconse"
-  instagram: "https://www.instagram.com/pycon_sweden/"
-  linkedin: "https://www.linkedin.com/company/pycon-sweden/"
+    facebook: "https://www.facebook.com/pyconse"
+    twitter: "https://x.com/pyconse"
+    instagram: "https://www.instagram.com/pycon_sweden/"
+    linkedin: "https://www.linkedin.com/company/pycon-sweden/"
 ---
 
 # PyCon Sweden 2025
