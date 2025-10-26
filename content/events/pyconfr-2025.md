@@ -23,8 +23,8 @@ params:
   venue_name: ""
   venue_address: "47 Rue du Sergent Michel Berthet, 69009 Lyon, France"
   social_media:
-  discourse: "https://discuss.afpy.org/"
-  linkedin: "https://www.linkedin.com/company/afpy/?originalSubdomain=fr"
+    discourse: "https://discuss.afpy.org/"
+    linkedin: "https://www.linkedin.com/company/afpy/?originalSubdomain=fr"
 ---
 
 # PyConFR 2025
