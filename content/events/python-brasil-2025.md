@@ -23,10 +23,10 @@ params:
   venue_name: ""
   venue_address: "R. Luís Coelho, 323 - Consolação, São Paulo - SP, 01309-001, Brazil"
   social_media:
-  youtube: "https://www.youtube.com/c/pythonbrasiloficial"
-  x: "https://x.com/pythonbrasil/"
-  instagram: "https://instagram.com/pythonbrasil/"
-  linkedin: "https://www.linkedin.com/company/apyb/"
+    youtube: "https://www.youtube.com/c/pythonbrasiloficial"
+    x: "https://x.com/pythonbrasil/"
+    instagram: "https://instagram.com/pythonbrasil/"
+    linkedin: "https://www.linkedin.com/company/apyb/"
 ---
 
 # Python Brasil 2025
