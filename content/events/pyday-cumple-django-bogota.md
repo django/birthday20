@@ -3,7 +3,7 @@
 title: "PyDay + Cumple Django"
 # PyDay combined with Django's 20th birthday
 description: "Join PyLadies Colombia for a special celebration combining PyDay with Django's 20th birthday!"
-# Publication date (today's date) 
+# Publication date (today's date)
 params:
   # Possible values: "in_person", "online", "hybrid" or "radio"
   event_type: "in_person"
