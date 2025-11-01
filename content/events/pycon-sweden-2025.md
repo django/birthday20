@@ -6,7 +6,6 @@ title: "PyCon Sweden 2025"
 description: "30-31 October 2025"
 date: "2025-07-07"
 draft: false
-
 params:
   event_type: "in_person"
   event_category: "conference"
@@ -24,6 +23,10 @@ params:
   venue_name: ""
   venue_address: "Ringvägen 98, 118 60 Stockholm, Sweden"
   social_media:
+    facebook: "https://www.facebook.com/pyconse"
+    twitter: "https://x.com/pyconse"
+    instagram: "https://www.instagram.com/pycon_sweden/"
+    linkedin: "https://www.linkedin.com/company/pycon-sweden/"
 ---
 
 # PyCon Sweden 2025
