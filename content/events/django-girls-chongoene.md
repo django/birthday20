@@ -5,7 +5,6 @@ description: "We inspire women to fall in love with programming. organizing a fr
 date: "2025-10-09"
 # Change this to "false" so the event will appear (the template is disabled)
 draft: false
-
 params:
   # Possible values: "in_person", "online", "hybrid" or "radio"
   event_type: "in_person"
@@ -35,11 +34,10 @@ params:
   venue_address: ""
   # Does your community have social media? Put URLs here (not handles!)
   social_media:
-    # mastodon: "..."
-    # twitter: "https://x.com/djangogirlsmoz"
-    # instagram: "https://instagram.com/djangogirlsmoz"
-    # linkedin: "https://www.linkedin.com/company/djangogirlsmoz"
-    # bluesky: "..."
+    facebook: "https://www.facebook.com/djangogirlsmoz/"
+    x: "https://x.com/djangogirlsmoz"
+    instagram: "https://instagram.com/djangogirlsmoz"
+    linkedin: "https://www.linkedin.com/company/djangogirlsmoz"
 ---
 
 <!-- Name of the event -->
