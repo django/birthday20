@@ -819,7 +819,8 @@ section.events {
         padding: 0.4rem;
         border-radius: 2rem;
         text-align: center;
-
+        background-color: #222222; /* default (matches 'other') */
+        color: #fafcfb; /* default (matches 'other') */
         &.conference {
           background-color: #00f8a5;
           color: #005935;
