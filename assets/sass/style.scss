@@ -819,6 +819,8 @@ section.events {
         padding: 0.4rem;
         border-radius: 2rem;
         text-align: center;
+        background-color: #222222;
+        color: #fafcfb;
 
         &.conference {
           background-color: #00f8a5;
@@ -836,7 +838,7 @@ section.events {
         }
 
         &.workshop {
-          background-color: #FF9800;
+          background-color: #2196F3;
           color: #fafcfb;
         }
 
