@@ -13,14 +13,16 @@ const map = L.map("map", {
 }).setView([25, 0], 2.5); // Center the map and initial zoom level
 
 const categoryColors = {
-	conference: "#00f8a5", // green
-	meetup: "#005935", // accent green
-	sprint: "#B57EDC", // lavender
-	other: "#222222" // lavender
+	conference: "#00f8a5", // mint green
+	meetup: "#005935",     // dark green
+	sprint: "#B57EDC",     // lavender
+	workshop: "#FF9800",   // orange (distinct color for workshop)
+	other: "#555555"     
 };
 
 function getColorByCategory(category) {
-	return categoryColors[category];
+	// default to 'other' if category missing
+	return categoryColors[category] || categoryColors.other;
 }
 
 let singleEventPopupLayer = null;
