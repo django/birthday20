@@ -819,7 +819,6 @@ section.events {
         padding: 0.4rem;
         border-radius: 2rem;
         text-align: center;
-
         &.conference {
           background-color: #00f8a5;
           color: #005935;
@@ -833,6 +832,11 @@ section.events {
         &.sprint {
           background-color: #b57edc;
           color: #3b1f54;
+        }
+
+        &.workshop {
+          background-color: #2196F3;
+          color: #fafcfb;
         }
 
         &.other {
