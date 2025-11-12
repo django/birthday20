@@ -28,3 +28,26 @@ uv run hugo server
 --------------------------------------------
 
 Please follow the instructions in [`content/add-event.md`](content/add-event.md) to submit your event via Pull Request or GitHub Issue.
+
+### 🔁 Updating vendored Leaflet assets
+
+The Leaflet and MarkerCluster files are included under `static/vendor/leaflet/`.
+
+If you want to update to a newer version, you can re-download the files manually or use the following command to fetch a specific version:
+
+```bash
+curl.exe -L -o static/vendor/leaflet/leaflet.js https://unpkg.com/leaflet@1.9.4/dist/leaflet.js
+
+The current vendored versions are:
+
+- **Leaflet 1.9.4**
+  - `leaflet.js`
+  - `leaflet.css`
+
+- **Leaflet.MarkerCluster 1.4.1**
+  - `leaflet.markercluster.js`
+  - `MarkerCluster.css`
+
+- **Leaflet.MarkerCluster Default Theme 1.5.0**
+  - `MarkerCluster.Default.min.css`
+
