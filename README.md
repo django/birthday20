@@ -50,4 +50,3 @@ The current vendored versions are:
 
 - **Leaflet.MarkerCluster Default Theme 1.5.0**
   - `MarkerCluster.Default.min.css`
-
