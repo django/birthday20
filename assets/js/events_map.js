@@ -16,6 +16,7 @@ const categoryColors = {
 	conference: "#00f8a5", // green
 	meetup: "#005935", // accent green
 	sprint: "#B57EDC", // lavender
+	workshop: "#2196F3", // blue
 	other: "#222222" // lavender
 };
 
