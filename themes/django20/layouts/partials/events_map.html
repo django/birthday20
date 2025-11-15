@@ -1,8 +1,7 @@
 <!-- Leaflet CSS file -->
-<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
-<link rel="stylesheet" href="/vendor/leaflet/MarkerCluster.css">
+<link rel="stylesheet" href="/vendor/leaflet/leaflet-1.9.4.css">
 <!-- Leaflet Marker Cluster CSS files -->
-<link rel="stylesheet" href="/vendor/leaflet/MarkerCluster.Default.min.css">
+<link rel="stylesheet" href="/vendor/leaflet/MarkerCluster-1.5.0.Default.min.css">
 
 <!-- Map -->
 {{ $events := .events }}
@@ -42,8 +41,8 @@
 </script>
 
 <!-- Leaflet JS file -->
-<script src="/vendor/leaflet/leaflet.js"></script>
-<script src="/vendor/leaflet/leaflet.markercluster.js"></script>
+<script src="/vendor/leaflet/leaflet-1.9.4.js"></script>
+<script src="/vendor/leaflet/leaflet.markercluster-1.5.0.js"></script>
 
 <!-- project JS file -->
 {{ with resources.Get "js/events_map.js" }}
