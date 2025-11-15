@@ -36,7 +36,8 @@
         </label>
       </section>
       <section class="table__body dropdown-content">
-        <table class="event-table">
+      <div class="scroll-container">
+        <table class="event-table" id="upcoming-table">
           <thead>
             <tr class="table-header">
               <th class="date header-element">Event</th>
@@ -45,62 +46,69 @@
               <th class="header-element">Category</th>
               <th class="header-element">Host</th>
             </tr>
+	    <tr class="search-row">
+              <th><input type="text" placeholder="🔍 Search Event"></th>
+              <th><input type="text" placeholder="🔍 Search Location"></th>
+              <th><input type="text" placeholder="🔍 Search Date"></th>
+              <th><input type="text" placeholder="🔍 Search Category"></th>
+              <th><input type="text" placeholder="🔍 Search Host"></th>
+            </tr>
           </thead>
           <tbody>
-            {{ range sort (where $events ".Params.event_date" "ge" $today) ".Params.event_date" "asc" }}
-            <tr>
-              <!-- Event -->
-              <td class="event-link">
-                <svg xmlns="http://www.w3.org/2000/svg"
-                    width="24" height="24" viewBox="0 0 24 24"
-                    fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M10 13a5 5 0 0 1 0-7l1.5-1.5a5 5 0 0 1 7 7L17 13"/>
-                  <path d="M14 11a5 5 0 0 1 0 7l-1.5 1.5a5 5 0 0 1-7-7L7 11"/>
-                </svg>
+            {{ $upcoming := sort (where $events ".Params.event_date" "ge" $today) ".Params.event_date" "asc" }}
+            {{ if gt (len $upcoming) 0 }}
+              {{ range $upcoming }}
+              <tr>
+                <!-- Event -->
+                <td class="event-link">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M10 13a5 5 0 0 1 0-7l1.5-1.5a5 5 0 0 1 7 7L17 13" />
+                    <path d="M14 11a5 5 0 0 1 0 7l-1.5 1.5a5 5 0 0 1-7-7L7 11" />
+                  </svg>
+                  <a href="{{ .Params.event_url | default .Permalink }}" target="_blank">{{ .Title | truncate 50 }}</a>
+                </td>
 
-                <a href="{{ .Params.event_url | default .Permalink }}" target="_blank">{{ .Title | truncate 50 }}</a>
-              </td>
-              <!-- Location -->
-              <td class="event-location">
-                {{ $city := .Params.city }}
-                {{ $country := .Params.country }}
+                <!-- Location -->
+                <td>
+                  {{ $city := .Params.city }}
+                  {{ $country := .Params.country }}
+                  {{ if and $city (not (findRE "[0-9]" $city)) }}{{ $city }}{{ if $country }}, {{ end }}{{ end }}
+                  {{ if $country }}{{ $country }}{{ end }}
+                </td>
 
-                {{ if and $city (not (findRE "[0-9]" $city)) }}
-                  {{ $city }}{{ if $country }},{{ end }}
-                {{ end }}
-                {{ if $country }}
-                  {{ $country }}
-                {{ end }}
-              </td>
-              <!-- Date -->
-              <td class="event-date">
-                {{ $eventDate := .Params.event_date | time }}
+                <!-- Date -->
+                <td>
+                  {{ $eventDate := .Params.event_date | time }}
+                  <span>{{ $eventDate.Format "02 January" }}</span>
+                  {{ if and .Params.event_date_end (ne .Params.event_date_end .Params.event_date) }}
+                    &nbsp;&raquo;&nbsp;
+                    {{ $eventDateEnd := .Params.event_date_end | time }}
+                    <span>{{ $eventDateEnd.Format "02 January" }}</span>
+                  {{ end }}
+                </td>
 
-                <span class="event-day">{{ $eventDate.Format "02" }}</span>
-                <span class="event-month">{{ $eventDate.Format "January" }}</span>
+                <!-- Category -->
+                <td>
+                  <p class="event-category {{ .Params.event_category }}">
+                    {{ with .Params.event_category }}{{ . }}{{ else }}—{{ end }}
+                  </p>
+                </td>
 
-                {{ if and .Params.event_date_end (ne .Params.event_date_end .Params.event_date) }}
-                  &nbsp;&raquo;&nbsp;
-                  {{ $eventDateEnd := .Params.event_date_end | time }}
-                  <span class="event-day">{{ $eventDateEnd.Format "02" }}</span>
-                  <span class="event-month">{{ $eventDateEnd.Format "January" }}</span>
-                {{ end }}
-              </td>
-              <!-- Category -->
-              <td>
-                <p class="event-category {{ .Params.event_category }}">
-                  {{ with .Params.event_category }}{{ . }}{{ else }}—{{ end }}
-                </p>
-              </td>
-              <!-- Host -->
-              <td class="event-host">{{ .Params.event_host }}</td>
-            </tr>
+                <!-- Host -->
+                <td>{{ .Params.event_host }}</td>
+              </tr>
+              {{ end }}
+            {{ else }}
+              <tr class="no-data">
+                <td colspan="5">No upcoming events available.</td>
+              </tr>
             {{ end }}
           </tbody>
         </table>
-      </section>
-    </div>
+      </div>
+    </section>
+  </div>
 
     <div class="table event-dropdown">
       <input type="checkbox" id="toggle-past" hidden>
@@ -116,7 +124,8 @@
         </label>
       </section>
       <section class="table__body dropdown-content">
-        <table class="event-table">
+      <div class="scroll-container">
+        <table class="event-table" id="past-table">
           <thead>
             <tr class="table-header">
               <th class="date header-element">Event</th>
@@ -125,62 +134,101 @@
               <th class="header-element">Category</th>
               <th class="header-element">Host</th>
             </tr>
+	    <tr class="search-row">
+              <th><input type="text" placeholder="🔍 Search Event"></th>
+              <th><input type="text" placeholder="🔍 Search Location"></th>
+              <th><input type="text" placeholder="🔍 Search Date"></th>
+              <th><input type="text" placeholder="🔍 Search Category"></th>
+              <th><input type="text" placeholder="🔍 Search Host"></th>
+            </tr>
           </thead>
           <tbody>
-            {{ range sort (where $events ".Params.event_date" "lt" $today) ".Params.event_date" "desc" }}
-            <tr>
-              <!-- Event -->
-              <td class="event-link">
-                <svg xmlns="http://www.w3.org/2000/svg"
-                    width="24" height="24" viewBox="0 0 24 24"
-                    fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M10 13a5 5 0 0 1 0-7l1.5-1.5a5 5 0 0 1 7 7L17 13"/>
-                  <path d="M14 11a5 5 0 0 1 0 7l-1.5 1.5a5 5 0 0 1-7-7L7 11"/>
-                </svg>
+            {{ $past := sort (where $events ".Params.event_date" "lt" $today) ".Params.event_date" "desc" }}
+            {{ if gt (len $past) 0 }}
+              {{ range $past }}
+              <tr>
+                <td class="event-link">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M10 13a5 5 0 0 1 0-7l1.5-1.5a5 5 0 0 1 7 7L17 13" />
+                    <path d="M14 11a5 5 0 0 1 0 7l-1.5 1.5a5 5 0 0 1-7-7L7 11" />
+                  </svg>
+                  <a href="{{ .Params.event_url | default .Permalink }}" target="_blank">{{ .Title | truncate 50 }}</a>
+                </td>
 
-                <a href="{{ .Params.event_url | default .Permalink }}" target="_blank">{{ .Title | truncate 50 }}</a>
-              </td>
-              <!-- Location -->
-              <td class="event-location">
-                {{ $city := .Params.city }}
-                {{ $country := .Params.country }}
+                <td>
+                  {{ $city := .Params.city }}
+                  {{ $country := .Params.country }}
+                  {{ if and $city (not (findRE "[0-9]" $city)) }}{{ $city }}{{ if $country }}, {{ end }}{{ end }}
+                  {{ if $country }}{{ $country }}{{ end }}
+                </td>
 
-                {{ if and $city (not (findRE "[0-9]" $city)) }}
-                  {{ $city }}{{ if $country }},{{ end }}
-                {{ end }}
-                {{ if $country }}
-                  {{ $country }}
-                {{ end }}
-              </td>
-              <!-- Date -->
-              <td class="event-date">
-                {{ $eventDate := .Params.event_date | time }}
+                <td>
+                  {{ $eventDate := .Params.event_date | time }}
+                  <span>{{ $eventDate.Format "02 January" }}</span>
+                  {{ if and .Params.event_date_end (ne .Params.event_date_end .Params.event_date) }}
+                    &nbsp;&raquo;&nbsp;
+                    {{ $eventDateEnd := .Params.event_date_end | time }}
+                    <span>{{ $eventDateEnd.Format "02 January" }}</span>
+                  {{ end }}
+                </td>
 
-                <span class="event-day">{{ $eventDate.Format "02" }}</span>
-                <span class="event-month">{{ $eventDate.Format "January" }}</span>
+                <td>
+                  <p class="event-category {{ .Params.event_category }}">
+                    {{ with .Params.event_category }}{{ . }}{{ else }}—{{ end }}
+                  </p>
+                </td>
 
-                {{ if and .Params.event_date_end (ne .Params.event_date_end .Params.event_date) }}
-                  &nbsp;&raquo;&nbsp;
-                  {{ $eventDateEnd := .Params.event_date_end | time }}
-                  <span class="event-day">{{ $eventDateEnd.Format "02" }}</span>
-                  <span class="event-month">{{ $eventDateEnd.Format "January" }}</span>
-                {{ end }}
-              </td>
-              <!-- Category -->
-              <td>
-                <p class="event-category {{ .Params.event_category }}">
-                  {{ with .Params.event_category }}{{ . }}{{ else }}—{{ end }}
-                </p>
-              </td>
-              <!-- Host -->
-              <td class="event-host">{{ .Params.event_host }}</td>
-            </tr>
+                <td>{{ .Params.event_host }}</td>
+              </tr>
+              {{ end }}
+            {{ else }}
+              <tr class="no-data">
+                <td colspan="5">No past events available.</td>
+              </tr>
             {{ end }}
           </tbody>
         </table>
-      </section>
+      </div>
+    </section>
   </div>
 </section>
+
+<!--  JS for Column Filtering -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  function setupTableFilter(tableId) {
+    const table = document.getElementById(tableId);
+    const filters = table.querySelectorAll('.search-row input');
+    const rows = table.querySelectorAll('tbody tr:not(.no-data)');
+
+    filters.forEach((input, colIndex) => {
+      input.addEventListener('keyup', function () {
+        const filterValue = input.value.toLowerCase();
+        let visibleCount = 0;
+        rows.forEach(row => {
+          const cell = row.cells[colIndex];
+          const text = cell ? cell.textContent.toLowerCase() : "";
+          if (text.includes(filterValue)) {
+            row.style.display = "";
+            visibleCount++;
+          } else {
+            row.style.display = "none";
+          }
+        });
+
+        const noDataRow = table.querySelector('.no-data');
+        if (noDataRow) {
+          noDataRow.style.display = visibleCount === 0 ? "" : "none";
+        }
+      });
+    });
+  }
+
+  setupTableFilter('upcoming-table');
+  setupTableFilter('past-table');
+});
+</script>
+
 
 {{- end -}}
