@@ -127,16 +127,21 @@ header {
 
   .logo {
     img {
-      display: block;
-      width: 100px;
-      margin-right: -10px;
+        display: block;
+        width: 100px;
+        margin-right: -10px;
+        transition: transform 0.3s ease;
 
-      @media screen and (min-width: 800px) {
-        width: 150px;
-        margin-right: -20px; // This is empty space in the image
-      }
+        @media screen and (min-width: 800px) {
+            width: 150px;
+            margin-right: -20px;
+        }
+
+        &:hover {
+            transform: translateY(-8px) scale(1.05);
+        }
     }
-  }
+}
 
   #check {
     display: none;
