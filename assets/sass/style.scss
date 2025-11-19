@@ -7,7 +7,8 @@ $theme-color-primary: #00f8a5;
 $theme-color-secondary: #44b0ff;
 $theme-color-tertiary: #fe7abf;
 
-
+// privacy styles
+@import "privacy-embed";
 html,
 body,
 div,
@@ -468,7 +469,7 @@ section.timeline {
     }
 	  iframe {
 	    width: 100%;
-	    min-height: 300px;;
+	    min-height: 300px;
 	  }
   }
   li:nth-child(even) {
