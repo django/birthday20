@@ -27,6 +27,16 @@ function getColorByCategory(category) {
 let singleEventPopupLayer = null;
 
 function renderEvents(geojsonData, singleEventGeojsonData) {
+	// FIX: Remove events with missing/null coordinates
+	geojsonData.features = geojsonData.features.filter(f => {
+		return (
+			f.geometry &&
+			f.geometry.coordinates &&
+			f.geometry.coordinates.length === 2 &&
+			f.geometry.coordinates[0] !== null &&
+			f.geometry.coordinates[1] !== null
+		);
+	});
 	if (!geojsonData) {
 		return
 	}
@@ -82,6 +92,9 @@ function renderEvents(geojsonData, singleEventGeojsonData) {
 
 	const geojsonLayer = L.geoJSON(geojsonData, {
 		pointToLayer: (feature, latlng) => {
+			if (!feature.geometry || !feature.geometry.coordinates || feature.geometry.coordinates.includes(null)) {
+				return; // skip this feature entirely
+			}
 			const category = feature.properties.event_category;
 			const color = getColorByCategory(category);
 			const marker = L.circleMarker(latlng, {
